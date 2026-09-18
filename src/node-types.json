@@ -1,0 +1,3258 @@
+[
+  {
+    "type": "attribute",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "attribute_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "attribute_value",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "xml_space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attribute_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attribute_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "double_quoted_attribute_value",
+          "named": true
+        },
+        {
+          "type": "single_quoted_attribute_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bind_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "bind",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "bind",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "choose_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "choose",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "choose",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "choose_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "choose_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "cdata",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "generic_element",
+          "named": true
+        },
+        {
+          "type": "include_element",
+          "named": true
+        },
+        {
+          "type": "otherwise_element",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "when_element",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete_statement",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "delete",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "delete",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "double_quoted_attribute_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "entity_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dynamic_element",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bind_element",
+          "named": true
+        },
+        {
+          "type": "choose_element",
+          "named": true
+        },
+        {
+          "type": "dynamic_sql_element",
+          "named": true
+        },
+        {
+          "type": "foreach_element",
+          "named": true
+        },
+        {
+          "type": "if_element",
+          "named": true
+        },
+        {
+          "type": "is_empty_element",
+          "named": true
+        },
+        {
+          "type": "is_equal_element",
+          "named": true
+        },
+        {
+          "type": "is_greater_equal_element",
+          "named": true
+        },
+        {
+          "type": "is_greater_than_element",
+          "named": true
+        },
+        {
+          "type": "is_less_equal_element",
+          "named": true
+        },
+        {
+          "type": "is_less_than_element",
+          "named": true
+        },
+        {
+          "type": "is_not_empty_element",
+          "named": true
+        },
+        {
+          "type": "is_not_equal_element",
+          "named": true
+        },
+        {
+          "type": "is_not_null_element",
+          "named": true
+        },
+        {
+          "type": "is_not_parameter_present_element",
+          "named": true
+        },
+        {
+          "type": "is_not_property_available_element",
+          "named": true
+        },
+        {
+          "type": "is_null_element",
+          "named": true
+        },
+        {
+          "type": "is_parameter_present_element",
+          "named": true
+        },
+        {
+          "type": "is_property_available_element",
+          "named": true
+        },
+        {
+          "type": "iterate_element",
+          "named": true
+        },
+        {
+          "type": "otherwise_element",
+          "named": true
+        },
+        {
+          "type": "set_element",
+          "named": true
+        },
+        {
+          "type": "trim_element",
+          "named": true
+        },
+        {
+          "type": "when_element",
+          "named": true
+        },
+        {
+          "type": "where_element",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dynamic_sql_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "dynamic",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "dynamic",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "element_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "cdata",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "dynamic_element",
+          "named": true
+        },
+        {
+          "type": "generic_element",
+          "named": true
+        },
+        {
+          "type": "include_element",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "foreach_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "foreach",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "foreach",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "generic_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "generic_end_tag",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "generic_self_closing_tag",
+            "named": true
+          },
+          {
+            "type": "generic_start_tag",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "generic_end_tag",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "tag_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "xml_space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "generic_self_closing_tag",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "tag_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "xml_space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "generic_start_tag",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "tag_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "xml_space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "if_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "if",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "include_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "include",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "include",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "insert_statement",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "insert",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "insert",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_empty_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isEmpty",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isEmpty",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_equal_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isEqual",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isEqual",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_greater_equal_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isGreaterEqual",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isGreaterEqual",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_greater_than_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isGreaterThan",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isGreaterThan",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_less_equal_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isLessEqual",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isLessEqual",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_less_than_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isLessThan",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isLessThan",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_not_empty_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isNotEmpty",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isNotEmpty",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_not_equal_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isNotEqual",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isNotEqual",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_not_null_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isNotNull",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isNotNull",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_not_parameter_present_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isNotParameterPresent",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isNotParameterPresent",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_not_property_available_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isNotPropertyAvailable",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isNotPropertyAvailable",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_null_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isNull",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isNull",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_parameter_present_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isParameterPresent",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isParameterPresent",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "is_property_available_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "isPropertyAvailable",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "isPropertyAvailable",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "iterate_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "iterate",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "iterate",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mapper",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "mapper_end_tag",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "mapper_start_tag",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "mapper_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mapper_end_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "xml_space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mapper_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "cdata",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "delete_statement",
+          "named": true
+        },
+        {
+          "type": "dynamic_element",
+          "named": true
+        },
+        {
+          "type": "generic_element",
+          "named": true
+        },
+        {
+          "type": "include_element",
+          "named": true
+        },
+        {
+          "type": "insert_statement",
+          "named": true
+        },
+        {
+          "type": "procedure_statement",
+          "named": true
+        },
+        {
+          "type": "select_key",
+          "named": true
+        },
+        {
+          "type": "select_statement",
+          "named": true
+        },
+        {
+          "type": "sql_fragment",
+          "named": true
+        },
+        {
+          "type": "statement_statement",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "update_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mapper_start_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "xml_space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "otherwise_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "otherwise",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "otherwise",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "procedure_statement",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "procedure",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "procedure",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "select_key",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "selectKey",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "selectKey",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "select_statement",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "select",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "select",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "set_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "set",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "single_quoted_attribute_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "entity_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "doctype",
+          "named": true
+        },
+        {
+          "type": "generic_element",
+          "named": true
+        },
+        {
+          "type": "mapper",
+          "named": true
+        },
+        {
+          "type": "processing_instruction",
+          "named": true
+        },
+        {
+          "type": "sql_map",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        },
+        {
+          "type": "xml_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sql_fragment",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "sql",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "sql",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sql_map",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sql_map_end_tag",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sql_map_start_tag",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "mapper_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sql_map_end_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "xml_space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sql_map_start_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "xml_space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "statement_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "cdata",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "dynamic_element",
+          "named": true
+        },
+        {
+          "type": "generic_element",
+          "named": true
+        },
+        {
+          "type": "include_element",
+          "named": true
+        },
+        {
+          "type": "select_key",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "statement_statement",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "statement",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "statement",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "entity_reference",
+          "named": true
+        },
+        {
+          "type": "ibatis_parameter",
+          "named": true
+        },
+        {
+          "type": "sql_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "trim_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "trim",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "trim",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "update_statement",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "update",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "update",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "when_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "when",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "when",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "where_element",
+    "named": true,
+    "fields": {
+      "end_tag": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "</",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "where",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      },
+      "start_tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "/>",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "attribute",
+            "named": true
+          },
+          {
+            "type": "where",
+            "named": false
+          },
+          {
+            "type": "xml_space",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "/>",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "</",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "bind",
+    "named": false
+  },
+  {
+    "type": "cdata",
+    "named": true
+  },
+  {
+    "type": "choose",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "delete",
+    "named": false
+  },
+  {
+    "type": "doctype",
+    "named": true
+  },
+  {
+    "type": "dynamic",
+    "named": false
+  },
+  {
+    "type": "entity_reference",
+    "named": true
+  },
+  {
+    "type": "foreach",
+    "named": false
+  },
+  {
+    "type": "ibatis_parameter",
+    "named": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "include",
+    "named": false
+  },
+  {
+    "type": "insert",
+    "named": false
+  },
+  {
+    "type": "isEmpty",
+    "named": false
+  },
+  {
+    "type": "isEqual",
+    "named": false
+  },
+  {
+    "type": "isGreaterEqual",
+    "named": false
+  },
+  {
+    "type": "isGreaterThan",
+    "named": false
+  },
+  {
+    "type": "isLessEqual",
+    "named": false
+  },
+  {
+    "type": "isLessThan",
+    "named": false
+  },
+  {
+    "type": "isNotEmpty",
+    "named": false
+  },
+  {
+    "type": "isNotEqual",
+    "named": false
+  },
+  {
+    "type": "isNotNull",
+    "named": false
+  },
+  {
+    "type": "isNotParameterPresent",
+    "named": false
+  },
+  {
+    "type": "isNotPropertyAvailable",
+    "named": false
+  },
+  {
+    "type": "isNull",
+    "named": false
+  },
+  {
+    "type": "isParameterPresent",
+    "named": false
+  },
+  {
+    "type": "isPropertyAvailable",
+    "named": false
+  },
+  {
+    "type": "iterate",
+    "named": false
+  },
+  {
+    "type": "mapper",
+    "named": false
+  },
+  {
+    "type": "otherwise",
+    "named": false
+  },
+  {
+    "type": "procedure",
+    "named": false
+  },
+  {
+    "type": "processing_instruction",
+    "named": true
+  },
+  {
+    "type": "select",
+    "named": false
+  },
+  {
+    "type": "selectKey",
+    "named": false
+  },
+  {
+    "type": "set",
+    "named": false
+  },
+  {
+    "type": "sql",
+    "named": false
+  },
+  {
+    "type": "sqlMap",
+    "named": false
+  },
+  {
+    "type": "sql_parameter",
+    "named": true
+  },
+  {
+    "type": "statement",
+    "named": false
+  },
+  {
+    "type": "tag_name",
+    "named": true
+  },
+  {
+    "type": "trim",
+    "named": false
+  },
+  {
+    "type": "update",
+    "named": false
+  },
+  {
+    "type": "when",
+    "named": false
+  },
+  {
+    "type": "where",
+    "named": false
+  },
+  {
+    "type": "xml_declaration",
+    "named": true
+  },
+  {
+    "type": "xml_space",
+    "named": true
+  }
+]

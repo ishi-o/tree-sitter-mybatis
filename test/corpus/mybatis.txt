@@ -1,0 +1,266 @@
+==================
+MyBatis mapper
+==================
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A commented-out statement must remain a comment. -->
+<mapper namespace='UserMapper'>
+  <sql id="baseColumns">id, name, status</sql>
+  <select id='findById' resultType="User">
+    SELECT <include refid='baseColumns' />
+    FROM users
+    <where>
+      <if test='id != null'>AND id = #{id}</if>
+    </where>
+  </select>
+  <select id="findByTable" databaseId='oracle'>
+    SELECT * FROM ${table} WHERE status = &quot;active&quot;
+  </select>
+  <!-- <select id="ignored">SELECT ignored</select> -->
+  <insert id="insertUser">
+    <selectKey keyProperty="id" resultType='int' order="BEFORE">SELECT next_id()</selectKey>
+    <![CDATA[INSERT INTO users (name) VALUES (#{name})]]>
+  </insert>
+</mapper>
+---
+
+(source_file
+  (xml_declaration)
+  (text)
+  (comment)
+  (text)
+  (mapper
+    (mapper_start_tag
+      (xml_space)
+      (attribute
+        (attribute_name
+          (identifier))
+        (attribute_value
+          (single_quoted_attribute_value))))
+    (mapper_item
+      (text))
+    (mapper_item
+      (sql_fragment
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (double_quoted_attribute_value)))
+        (element_content
+          (text))))
+    (mapper_item
+      (text))
+    (mapper_item
+      (select_statement
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (single_quoted_attribute_value)))
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (double_quoted_attribute_value)))
+        (statement_content
+          (text))
+        (statement_content
+          (include_element
+            (xml_space)
+            (attribute
+              (attribute_name
+                (identifier))
+              (attribute_value
+                (single_quoted_attribute_value)))
+            (xml_space)))
+        (statement_content
+          (text))
+        (statement_content
+          (dynamic_element
+            (where_element
+              (element_content
+                (text))
+              (element_content
+                (dynamic_element
+                  (if_element
+                    (xml_space)
+                    (attribute
+                      (attribute_name
+                        (identifier))
+                      (attribute_value
+                        (single_quoted_attribute_value)))
+                    (element_content
+                      (text
+                        (sql_parameter))))))
+              (element_content
+                (text)))))
+        (statement_content
+          (text))))
+    (mapper_item
+      (text))
+    (mapper_item
+      (select_statement
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (double_quoted_attribute_value)))
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (single_quoted_attribute_value)))
+        (statement_content
+          (text
+            (sql_parameter)
+            (entity_reference)
+            (entity_reference)))))
+    (mapper_item
+      (text))
+    (mapper_item
+      (comment))
+    (mapper_item
+      (text))
+    (mapper_item
+      (insert_statement
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (double_quoted_attribute_value)))
+        (statement_content
+          (text))
+        (statement_content
+          (select_key
+            (xml_space)
+            (attribute
+              (attribute_name
+                (identifier))
+              (attribute_value
+                (double_quoted_attribute_value)))
+            (xml_space)
+            (attribute
+              (attribute_name
+                (identifier))
+              (attribute_value
+                (single_quoted_attribute_value)))
+            (xml_space)
+            (attribute
+              (attribute_name
+                (identifier))
+              (attribute_value
+                (double_quoted_attribute_value)))
+            (statement_content
+              (text))))
+        (statement_content
+          (text))
+        (statement_content
+          (cdata))
+        (statement_content
+          (text))))
+    (mapper_item
+      (text))
+    (mapper_end_tag)))
+
+==================
+iBATIS sqlMap
+==================
+<?xml version="1.0"?>
+<sqlMap namespace="UserDAO">
+  <select id='findById' parameterClass="int" resultClass="User">
+    SELECT * FROM users WHERE id = #id#
+    <isNotEmpty prepend="AND" property="status">
+      status = #status#
+    </isNotEmpty>
+  </select>
+  <sql id="baseColumns">id, name</sql>
+  <include refid="baseColumns"/>
+</sqlMap>
+---
+
+(source_file
+  (xml_declaration)
+  (text)
+  (sql_map
+    (sql_map_start_tag
+      (xml_space)
+      (attribute
+        (attribute_name
+          (identifier))
+        (attribute_value
+          (double_quoted_attribute_value))))
+    (mapper_item
+      (text))
+    (mapper_item
+      (select_statement
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (single_quoted_attribute_value)))
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (double_quoted_attribute_value)))
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (double_quoted_attribute_value)))
+        (statement_content
+          (text
+            (ibatis_parameter)))
+        (statement_content
+          (dynamic_element
+            (is_not_empty_element
+              (xml_space)
+              (attribute
+                (attribute_name
+                  (identifier))
+                (attribute_value
+                  (double_quoted_attribute_value)))
+              (xml_space)
+              (attribute
+                (attribute_name
+                  (identifier))
+                (attribute_value
+                  (double_quoted_attribute_value)))
+              (element_content
+                (text
+                  (ibatis_parameter))))))
+        (statement_content
+          (text))))
+    (mapper_item
+      (text))
+    (mapper_item
+      (sql_fragment
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (double_quoted_attribute_value)))
+        (element_content
+          (text))))
+    (mapper_item
+      (text))
+    (mapper_item
+      (include_element
+        (xml_space)
+        (attribute
+          (attribute_name
+            (identifier))
+          (attribute_value
+            (double_quoted_attribute_value)))))
+    (mapper_item
+      (text))
+    (sql_map_end_tag)))
