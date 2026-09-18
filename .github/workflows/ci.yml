@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Tree-sitter CLI
+        run: cargo install tree-sitter-cli --version 0.25.10 --locked
+
+      - name: Generate parser
+        run: tree-sitter generate
+
+      - name: Run grammar tests
+        run: tree-sitter test
+
+      - name: Check generated files
+        run: git diff --exit-code -- src/grammar.json src/node-types.json src/parser.c
+
+      - name: Run Rust tests
+        run: cargo test
