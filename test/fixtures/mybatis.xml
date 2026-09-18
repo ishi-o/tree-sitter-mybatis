@@ -2,10 +2,7 @@
 <!-- A commented-out statement must remain a comment. -->
 <mapper namespace='UserMapper'>
   <sql id="baseColumns">id, name, status</sql>
-  <select id='findById' resultType="User">
-    SELECT <include refid='baseColumns' />
-    FROM users
-    <where>
+  <select id='findById' resultType="User"> SELECT <include refid='baseColumns' /> FROM users <where>
       <if test='id != null'>AND id = #{id}</if>
     </where>
   </select>

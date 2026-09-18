@@ -23,58 +23,48 @@ MyBatis mapper
 </mapper>
 ---
 
-(source_file
-  (xml_declaration)
-  (text)
-  (comment)
-  (text)
-  (mapper
-    (mapper_start_tag
-      (xml_space)
-      (attribute
-        (attribute_name
+(document
+  (XMLDecl)
+  (Comment)
+  (Mapper
+    (MapperSTag
+      (Attribute
+        (Name
           (identifier))
-        (attribute_value
-          (single_quoted_attribute_value))))
-    (mapper_item
-      (text))
+        (AttValue
+          (string))))
+    (mapper_item)
     (mapper_item
       (sql_fragment
-        (xml_space)
-        (attribute
-          (attribute_name
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (double_quoted_attribute_value)))
+          (AttValue
+            (string)))
         (element_content
           (text))))
-    (mapper_item
-      (text))
+    (mapper_item)
     (mapper_item
       (select_statement
-        (xml_space)
-        (attribute
-          (attribute_name
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (single_quoted_attribute_value)))
-        (xml_space)
-        (attribute
-          (attribute_name
+          (AttValue
+            (string)))
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (double_quoted_attribute_value)))
+          (AttValue
+            (string)))
         (statement_content
           (text))
         (statement_content
           (include_element
-            (xml_space)
-            (attribute
-              (attribute_name
+            (Attribute
+              (Name
                 (identifier))
-              (attribute_value
-                (single_quoted_attribute_value)))
-            (xml_space)))
+              (AttValue
+                (string)))))
         (statement_content
           (text))
         (statement_content
@@ -85,12 +75,11 @@ MyBatis mapper
               (element_content
                 (dynamic_element
                   (if_element
-                    (xml_space)
-                    (attribute
-                      (attribute_name
+                    (Attribute
+                      (Name
                         (identifier))
-                      (attribute_value
-                        (single_quoted_attribute_value)))
+                      (AttValue
+                        (string)))
                     (element_content
                       (text
                         (sql_parameter))))))
@@ -98,63 +87,54 @@ MyBatis mapper
                 (text)))))
         (statement_content
           (text))))
-    (mapper_item
-      (text))
+    (mapper_item)
     (mapper_item
       (select_statement
-        (xml_space)
-        (attribute
-          (attribute_name
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (double_quoted_attribute_value)))
-        (xml_space)
-        (attribute
-          (attribute_name
+          (AttValue
+            (string)))
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (single_quoted_attribute_value)))
+          (AttValue
+            (string)))
         (statement_content
           (text
             (sql_parameter)
             (entity_reference)
             (entity_reference)))))
+    (mapper_item)
     (mapper_item
-      (text))
-    (mapper_item
-      (comment))
-    (mapper_item
-      (text))
+      (Comment))
+    (mapper_item)
     (mapper_item
       (insert_statement
-        (xml_space)
-        (attribute
-          (attribute_name
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (double_quoted_attribute_value)))
+          (AttValue
+            (string)))
         (statement_content
           (text))
         (statement_content
           (select_key
-            (xml_space)
-            (attribute
-              (attribute_name
+            (Attribute
+              (Name
                 (identifier))
-              (attribute_value
-                (double_quoted_attribute_value)))
-            (xml_space)
-            (attribute
-              (attribute_name
+              (AttValue
+                (string)))
+            (Attribute
+              (Name
                 (identifier))
-              (attribute_value
-                (single_quoted_attribute_value)))
-            (xml_space)
-            (attribute
-              (attribute_name
+              (AttValue
+                (string)))
+            (Attribute
+              (Name
                 (identifier))
-              (attribute_value
-                (double_quoted_attribute_value)))
+              (AttValue
+                (string)))
             (statement_content
               (text))))
         (statement_content
@@ -163,9 +143,8 @@ MyBatis mapper
           (cdata))
         (statement_content
           (text))))
-    (mapper_item
-      (text))
-    (mapper_end_tag)))
+    (mapper_item)
+    (MapperETag)))
 
 ==================
 iBATIS sqlMap
@@ -183,84 +162,71 @@ iBATIS sqlMap
 </sqlMap>
 ---
 
-(source_file
-  (xml_declaration)
-  (text)
+(document
+  (XMLDecl)
   (sql_map
-    (sql_map_start_tag
-      (xml_space)
-      (attribute
-        (attribute_name
+    (SqlMapSTag
+      (Attribute
+        (Name
           (identifier))
-        (attribute_value
-          (double_quoted_attribute_value))))
-    (mapper_item
-      (text))
+        (AttValue
+          (string))))
+    (mapper_item)
     (mapper_item
       (select_statement
-        (xml_space)
-        (attribute
-          (attribute_name
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (single_quoted_attribute_value)))
-        (xml_space)
-        (attribute
-          (attribute_name
+          (AttValue
+            (string)))
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (double_quoted_attribute_value)))
-        (xml_space)
-        (attribute
-          (attribute_name
+          (AttValue
+            (string)))
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (double_quoted_attribute_value)))
+          (AttValue
+            (string)))
         (statement_content
           (text
             (ibatis_parameter)))
         (statement_content
           (dynamic_element
             (is_not_empty_element
-              (xml_space)
-              (attribute
-                (attribute_name
+              (Attribute
+                (Name
                   (identifier))
-                (attribute_value
-                  (double_quoted_attribute_value)))
-              (xml_space)
-              (attribute
-                (attribute_name
+                (AttValue
+                  (string)))
+              (Attribute
+                (Name
                   (identifier))
-                (attribute_value
-                  (double_quoted_attribute_value)))
+                (AttValue
+                  (string)))
               (element_content
                 (text
                   (ibatis_parameter))))))
         (statement_content
           (text))))
-    (mapper_item
-      (text))
+    (mapper_item)
     (mapper_item
       (sql_fragment
-        (xml_space)
-        (attribute
-          (attribute_name
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (double_quoted_attribute_value)))
+          (AttValue
+            (string)))
         (element_content
           (text))))
-    (mapper_item
-      (text))
+    (mapper_item)
     (mapper_item
       (include_element
-        (xml_space)
-        (attribute
-          (attribute_name
+        (Attribute
+          (Name
             (identifier))
-          (attribute_value
-            (double_quoted_attribute_value)))))
-    (mapper_item
-      (text))
-    (sql_map_end_tag)))
+          (AttValue
+            (string)))))
+    (mapper_item)
+    (SqlMapETag)))
