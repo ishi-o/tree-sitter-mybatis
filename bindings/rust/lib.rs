@@ -4,8 +4,21 @@
 //! tree-sitter [`Parser`], and then use the parser to parse some code:
 //!
 //! ```
-//! let code = "hello";
-//! let mut parser = tree_sitter::Parser::new();
+//! use tree_sitter::Parser;
+//!
+//! let code = r#"
+//! <?xml version="1.0" encoding="UTF-8" ?>
+//! <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+//! <mapper namespace="io.spring.infrastructure.mybatis.mapper.UserMapper">
+//!     <select id="find" resultMap="user">
+//!         select
+//!           AF.name name
+//!           from users AF
+//!           where AF.id = #{userId}
+//!     </select>
+//! </mapper>
+//! "#;
+//! let mut parser = Parser::new();
 //! let language = tree_sitter_mybatis::LANGUAGE;
 //! parser
 //!     .set_language(&language.into())
