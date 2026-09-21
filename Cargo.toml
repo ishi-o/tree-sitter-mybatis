@@ -2,7 +2,7 @@
 name = "tree-sitter-mybatis"
 description = "Tree-sitter grammar for MyBatis and iBATIS mapper files"
 version = "0.1.0"
-authors = ["ishi-o <458457289@qq.com>"]
+authors = ["ishi-o <ishio.liu@outlook.com>"]
 license = "MIT"
 readme = "README.md"
 keywords = ["tree-sitter", "mybatis", "ibatis", "sql", "xml"]

@@ -4,11 +4,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
-          "type": "string",
+          "type": "CharRef",
+          "named": true
+        },
+        {
+          "type": "EntityRef",
           "named": true
         }
       ]
@@ -34,6 +38,573 @@
     }
   },
   {
+    "type": "BindElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "CDSect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "CDStart",
+          "named": true
+        },
+        {
+          "type": "CData",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "CDStart",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "CData",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "CharRef",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "ChooseElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "DelElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DelElem",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "from",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "DynamicSqlElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ETag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "Name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "EmptyElemTag",
     "named": true,
     "fields": {},
@@ -46,7 +617,2810 @@
           "named": true
         },
         {
-          "type": "tag_name",
+          "type": "Name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "EntityRef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "Name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ExternalID",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "PubidLiteral",
+          "named": true
+        },
+        {
+          "type": "SystemLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ForeachElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IfElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IncludeElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "InsElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DelElem",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "from",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsEmptyElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsEqualElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsGreaterEqualElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsGreaterThanElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsLessEqualElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsLessThanElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsNotEmptyElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsNotEqualElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsNotNullElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsNotParameterPresentElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsNotPropertyAvailableElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsNullElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsParameterPresentElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IsPropertyAvailableElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "IterateElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
           "named": true
         }
       ]
@@ -61,6 +3435,106 @@
       "required": true,
       "types": [
         {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DelElem",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
           "type": "MapperETag",
           "named": true
         },
@@ -69,7 +3543,71 @@
           "named": true
         },
         {
-          "type": "mapper_item",
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "from",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
           "named": true
         }
       ]
@@ -96,15 +3634,306 @@
     }
   },
   {
-    "type": "Name",
+    "type": "OtherwiseElem",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
-          "type": "identifier",
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ProcElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_call",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
           "named": true
         }
       ]
@@ -123,7 +3952,862 @@
           "named": true
         },
         {
-          "type": "tag_name",
+          "type": "Name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "SelElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DelElem",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "from",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "SelKeyElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DelElem",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "from",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "SetElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "SqlElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "SqlMap",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DelElem",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "SqlMapETag",
+          "named": true
+        },
+        {
+          "type": "SqlMapSTag",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "from",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
           "named": true
         }
       ]
@@ -150,7 +4834,7 @@
     }
   },
   {
-    "type": "bind_element",
+    "type": "StmtElem",
     "named": true,
     "fields": {},
     "children": {
@@ -162,33 +4846,178 @@
           "named": true
         },
         {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "choose_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
+          "type": "BindElem",
           "named": true
         },
         {
-          "type": "choose_item",
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DelElem",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "from",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "choose_item",
+    "type": "SystemLiteral",
     "named": true,
     "fields": {},
     "children": {
@@ -196,38 +5025,14 @@
       "required": true,
       "types": [
         {
-          "type": "Comment",
-          "named": true
-        },
-        {
-          "type": "cdata",
-          "named": true
-        },
-        {
-          "type": "generic_element",
-          "named": true
-        },
-        {
-          "type": "include_element",
-          "named": true
-        },
-        {
-          "type": "otherwise_element",
-          "named": true
-        },
-        {
-          "type": "text",
-          "named": true
-        },
-        {
-          "type": "when_element",
+          "type": "URI",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "delete_statement",
+    "type": "TrimElem",
     "named": true,
     "fields": {},
     "children": {
@@ -239,7 +5044,859 @@
           "named": true
         },
         {
-          "type": "statement_content",
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "UpdElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DelElem",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "from",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "WhenElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "WhereElem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "BindElem",
+          "named": true
+        },
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "ChooseElem",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "DynamicSqlElem",
+          "named": true
+        },
+        {
+          "type": "ForeachElem",
+          "named": true
+        },
+        {
+          "type": "IfElem",
+          "named": true
+        },
+        {
+          "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "IsEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsGreaterThanElem",
+          "named": true
+        },
+        {
+          "type": "IsLessEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsLessThanElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEmptyElem",
+          "named": true
+        },
+        {
+          "type": "IsNotEqualElem",
+          "named": true
+        },
+        {
+          "type": "IsNotNullElem",
+          "named": true
+        },
+        {
+          "type": "IsNotParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsNotPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IsNullElem",
+          "named": true
+        },
+        {
+          "type": "IsParameterPresentElem",
+          "named": true
+        },
+        {
+          "type": "IsPropertyAvailableElem",
+          "named": true
+        },
+        {
+          "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "SetElem",
+          "named": true
+        },
+        {
+          "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "WhenElem",
+          "named": true
+        },
+        {
+          "type": "WhereElem",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "all_fields",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "object_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "assignment",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "invocation",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "binary_expression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "invocation",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "invocation",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "keyword_and",
+          "named": true
+        },
+        {
+          "type": "keyword_is",
+          "named": true
+        },
+        {
+          "type": "keyword_not",
+          "named": true
+        },
+        {
+          "type": "keyword_or",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "column",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true,
+    "fields": {}
+  },
+  {
+    "type": "content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "CDSect",
+          "named": true
+        },
+        {
+          "type": "CharData",
+          "named": true
+        },
+        {
+          "type": "CharRef",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        },
+        {
+          "type": "EntityRef",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword_delete",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "doctypedecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ExternalID",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         }
       ]
@@ -263,224 +5920,40 @@
           "named": true
         },
         {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "SqlMap",
+          "named": true
+        },
+        {
           "type": "XMLDecl",
           "named": true
         },
         {
-          "type": "doctype",
+          "type": "doctypedecl",
           "named": true
         },
         {
-          "type": "generic_element",
-          "named": true
-        },
-        {
-          "type": "processing_instruction",
-          "named": true
-        },
-        {
-          "type": "sql_map",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "element",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "dynamic_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "bind_element",
-          "named": true
-        },
-        {
-          "type": "choose_element",
-          "named": true
-        },
-        {
-          "type": "dynamic_sql_element",
-          "named": true
-        },
-        {
-          "type": "foreach_element",
-          "named": true
-        },
-        {
-          "type": "if_element",
-          "named": true
-        },
-        {
-          "type": "is_empty_element",
-          "named": true
-        },
-        {
-          "type": "is_equal_element",
-          "named": true
-        },
-        {
-          "type": "is_greater_equal_element",
-          "named": true
-        },
-        {
-          "type": "is_greater_than_element",
-          "named": true
-        },
-        {
-          "type": "is_less_equal_element",
-          "named": true
-        },
-        {
-          "type": "is_less_than_element",
-          "named": true
-        },
-        {
-          "type": "is_not_empty_element",
-          "named": true
-        },
-        {
-          "type": "is_not_equal_element",
-          "named": true
-        },
-        {
-          "type": "is_not_null_element",
-          "named": true
-        },
-        {
-          "type": "is_not_parameter_present_element",
-          "named": true
-        },
-        {
-          "type": "is_not_property_available_element",
-          "named": true
-        },
-        {
-          "type": "is_null_element",
-          "named": true
-        },
-        {
-          "type": "is_parameter_present_element",
-          "named": true
-        },
-        {
-          "type": "is_property_available_element",
-          "named": true
-        },
-        {
-          "type": "iterate_element",
-          "named": true
-        },
-        {
-          "type": "otherwise_element",
-          "named": true
-        },
-        {
-          "type": "set_element",
-          "named": true
-        },
-        {
-          "type": "trim_element",
-          "named": true
-        },
-        {
-          "type": "when_element",
-          "named": true
-        },
-        {
-          "type": "where_element",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "dynamic_sql_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "element_content",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "Comment",
-          "named": true
-        },
-        {
-          "type": "cdata",
-          "named": true
-        },
-        {
-          "type": "dynamic_element",
-          "named": true
-        },
-        {
-          "type": "generic_element",
-          "named": true
-        },
-        {
-          "type": "include_element",
-          "named": true
-        },
-        {
-          "type": "text",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "foreach_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "generic_element",
+    "type": "element",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "ETag",
+          "named": true
+        },
         {
           "type": "EmptyElemTag",
           "named": true
@@ -490,537 +5963,40 @@
           "named": true
         },
         {
-          "type": "element_content",
-          "named": true
-        },
-        {
-          "type": "generic_element",
+          "type": "content",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "if_element",
+    "type": "field",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "include_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "insert_statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "statement_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_empty_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_equal_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_greater_equal_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_greater_than_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_less_equal_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_less_than_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_not_empty_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_not_equal_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_not_null_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_not_parameter_present_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_not_property_available_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_null_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_parameter_present_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "is_property_available_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "iterate_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "mapper_item",
-    "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "Comment",
-          "named": true
-        },
-        {
-          "type": "cdata",
-          "named": true
-        },
-        {
-          "type": "delete_statement",
-          "named": true
-        },
-        {
-          "type": "dynamic_element",
-          "named": true
-        },
-        {
-          "type": "generic_element",
-          "named": true
-        },
-        {
-          "type": "include_element",
-          "named": true
-        },
-        {
-          "type": "insert_statement",
-          "named": true
-        },
-        {
-          "type": "procedure_statement",
-          "named": true
-        },
-        {
-          "type": "select_key",
-          "named": true
-        },
-        {
-          "type": "select_statement",
-          "named": true
-        },
-        {
-          "type": "sql_fragment",
-          "named": true
-        },
-        {
-          "type": "statement_statement",
-          "named": true
-        },
-        {
-          "type": "update_statement",
+          "type": "object_reference",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "otherwise_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "procedure_statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "statement_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "select_key",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "statement_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "select_statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "statement_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "set_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "sql_fragment",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "sql_map",
+    "type": "from",
     "named": true,
     "fields": {},
     "children": {
@@ -1028,194 +6004,499 @@
       "required": true,
       "types": [
         {
-          "type": "SqlMapETag",
+          "type": "binary_expression",
           "named": true
         },
         {
-          "type": "SqlMapSTag",
+          "type": "field",
           "named": true
         },
         {
-          "type": "mapper_item",
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "join",
+          "named": true
+        },
+        {
+          "type": "keyword_from",
+          "named": true
+        },
+        {
+          "type": "keyword_where",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "object_reference",
+          "named": true
+        },
+        {
+          "type": "relation",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "statement_content",
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "insert",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword_insert",
+          "named": true
+        },
+        {
+          "type": "keyword_into",
+          "named": true
+        },
+        {
+          "type": "keyword_values",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "object_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "invocation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "object_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "join",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "join",
+          "named": true
+        },
+        {
+          "type": "keyword_full",
+          "named": true
+        },
+        {
+          "type": "keyword_inner",
+          "named": true
+        },
+        {
+          "type": "keyword_join",
+          "named": true
+        },
+        {
+          "type": "keyword_left",
+          "named": true
+        },
+        {
+          "type": "keyword_on",
+          "named": true
+        },
+        {
+          "type": "keyword_right",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "relation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "column",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal",
     "named": true,
     "fields": {},
     "children": {
       "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "keyword_current_timestamp",
+          "named": true
+        },
+        {
+          "type": "keyword_null",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "object_reference",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "relation",
+    "named": true,
+    "fields": {
+      "alias": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "Comment",
+          "type": "keyword_as",
           "named": true
         },
         {
-          "type": "cdata",
-          "named": true
-        },
-        {
-          "type": "dynamic_element",
-          "named": true
-        },
-        {
-          "type": "generic_element",
-          "named": true
-        },
-        {
-          "type": "include_element",
-          "named": true
-        },
-        {
-          "type": "select_key",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "object_reference",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "statement_statement",
+    "type": "select",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "Attribute",
+          "type": "IncludeElem",
           "named": true
         },
         {
-          "type": "statement_content",
+          "type": "keyword_distinct",
+          "named": true
+        },
+        {
+          "type": "keyword_select",
+          "named": true
+        },
+        {
+          "type": "select_expression",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "string",
+    "type": "select_expression",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "entity_reference",
+          "type": "term",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "text",
+    "type": "statement",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "entity_reference",
+          "type": "delete",
           "named": true
         },
         {
-          "type": "ibatis_parameter",
+          "type": "from",
           "named": true
         },
         {
-          "type": "sql_parameter",
+          "type": "insert",
+          "named": true
+        },
+        {
+          "type": "keyword_table",
+          "named": true
+        },
+        {
+          "type": "keyword_truncate",
+          "named": true
+        },
+        {
+          "type": "object_reference",
+          "named": true
+        },
+        {
+          "type": "select",
+          "named": true
+        },
+        {
+          "type": "update",
+          "named": true
+        },
+        {
+          "type": "where",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "trim_element",
+    "type": "term",
     "named": true,
-    "fields": {},
+    "fields": {
+      "alias": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "all_fields",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "invocation",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
+          "type": "keyword_as",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "update_statement",
+    "type": "update",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "Attribute",
+          "type": "assignment",
           "named": true
         },
         {
-          "type": "statement_content",
+          "type": "keyword_set",
+          "named": true
+        },
+        {
+          "type": "keyword_update",
+          "named": true
+        },
+        {
+          "type": "relation",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "when_element",
+    "type": "where",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "Attribute",
+          "type": "binary_expression",
           "named": true
         },
         {
-          "type": "element_content",
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "invocation",
+          "named": true
+        },
+        {
+          "type": "keyword_where",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "literal",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "where_element",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "Attribute",
-          "named": true
-        },
-        {
-          "type": "element_content",
-          "named": true
-        }
-      ]
-    }
+    "type": "!=",
+    "named": false
   },
   {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": "%",
     "named": false
   },
   {
@@ -1223,7 +6504,47 @@
     "named": false
   },
   {
+    "type": "&#",
+    "named": false
+  },
+  {
+    "type": "&#x",
+    "named": false
+  },
+  {
     "type": "'",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
     "named": false
   },
   {
@@ -1231,11 +6552,31 @@
     "named": false
   },
   {
+    "type": ";",
+    "named": false
+  },
+  {
     "type": "<",
     "named": false
   },
   {
+    "type": "<!DOCTYPE",
+    "named": false
+  },
+  {
+    "type": "<![",
+    "named": false
+  },
+  {
     "type": "</",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "<>",
     "named": false
   },
   {
@@ -1247,7 +6588,43 @@
     "named": false
   },
   {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "CDATA",
+    "named": false
+  },
+  {
+    "type": "CharData",
+    "named": true
+  },
+  {
     "type": "Comment",
+    "named": true
+  },
+  {
+    "type": "Name",
+    "named": true
+  },
+  {
+    "type": "PI",
+    "named": true
+  },
+  {
+    "type": "PUBLIC",
+    "named": false
+  },
+  {
+    "type": "PubidLiteral",
+    "named": true
+  },
+  {
+    "type": "SYSTEM",
+    "named": false
+  },
+  {
+    "type": "URI",
     "named": true
   },
   {
@@ -1255,179 +6632,127 @@
     "named": true
   },
   {
-    "type": "bind",
+    "type": "[",
     "named": false
   },
   {
-    "type": "cdata",
+    "type": "]]>",
+    "named": false
+  },
+  {
+    "type": "keyword_and",
     "named": true
   },
   {
-    "type": "choose",
-    "named": false
-  },
-  {
-    "type": "delete",
-    "named": false
-  },
-  {
-    "type": "doctype",
+    "type": "keyword_as",
     "named": true
   },
   {
-    "type": "dynamic",
-    "named": false
-  },
-  {
-    "type": "entity_reference",
+    "type": "keyword_call",
     "named": true
   },
   {
-    "type": "foreach",
-    "named": false
-  },
-  {
-    "type": "ibatis_parameter",
+    "type": "keyword_current_timestamp",
     "named": true
   },
   {
-    "type": "identifier",
+    "type": "keyword_delete",
     "named": true
   },
   {
-    "type": "if",
-    "named": false
-  },
-  {
-    "type": "include",
-    "named": false
-  },
-  {
-    "type": "insert",
-    "named": false
-  },
-  {
-    "type": "isEmpty",
-    "named": false
-  },
-  {
-    "type": "isEqual",
-    "named": false
-  },
-  {
-    "type": "isGreaterEqual",
-    "named": false
-  },
-  {
-    "type": "isGreaterThan",
-    "named": false
-  },
-  {
-    "type": "isLessEqual",
-    "named": false
-  },
-  {
-    "type": "isLessThan",
-    "named": false
-  },
-  {
-    "type": "isNotEmpty",
-    "named": false
-  },
-  {
-    "type": "isNotEqual",
-    "named": false
-  },
-  {
-    "type": "isNotNull",
-    "named": false
-  },
-  {
-    "type": "isNotParameterPresent",
-    "named": false
-  },
-  {
-    "type": "isNotPropertyAvailable",
-    "named": false
-  },
-  {
-    "type": "isNull",
-    "named": false
-  },
-  {
-    "type": "isParameterPresent",
-    "named": false
-  },
-  {
-    "type": "isPropertyAvailable",
-    "named": false
-  },
-  {
-    "type": "iterate",
-    "named": false
-  },
-  {
-    "type": "mapper",
-    "named": false
-  },
-  {
-    "type": "otherwise",
-    "named": false
-  },
-  {
-    "type": "procedure",
-    "named": false
-  },
-  {
-    "type": "processing_instruction",
+    "type": "keyword_distinct",
     "named": true
   },
   {
-    "type": "select",
-    "named": false
-  },
-  {
-    "type": "selectKey",
-    "named": false
-  },
-  {
-    "type": "set",
-    "named": false
-  },
-  {
-    "type": "sql",
-    "named": false
-  },
-  {
-    "type": "sqlMap",
-    "named": false
-  },
-  {
-    "type": "sql_parameter",
+    "type": "keyword_from",
     "named": true
   },
   {
-    "type": "statement",
-    "named": false
-  },
-  {
-    "type": "tag_name",
+    "type": "keyword_full",
     "named": true
   },
   {
-    "type": "trim",
+    "type": "keyword_inner",
+    "named": true
+  },
+  {
+    "type": "keyword_insert",
+    "named": true
+  },
+  {
+    "type": "keyword_into",
+    "named": true
+  },
+  {
+    "type": "keyword_is",
+    "named": true
+  },
+  {
+    "type": "keyword_join",
+    "named": true
+  },
+  {
+    "type": "keyword_left",
+    "named": true
+  },
+  {
+    "type": "keyword_not",
+    "named": true
+  },
+  {
+    "type": "keyword_null",
+    "named": true
+  },
+  {
+    "type": "keyword_on",
+    "named": true
+  },
+  {
+    "type": "keyword_or",
+    "named": true
+  },
+  {
+    "type": "keyword_right",
+    "named": true
+  },
+  {
+    "type": "keyword_select",
+    "named": true
+  },
+  {
+    "type": "keyword_set",
+    "named": true
+  },
+  {
+    "type": "keyword_table",
+    "named": true
+  },
+  {
+    "type": "keyword_truncate",
+    "named": true
+  },
+  {
+    "type": "keyword_update",
+    "named": true
+  },
+  {
+    "type": "keyword_values",
+    "named": true
+  },
+  {
+    "type": "keyword_where",
+    "named": true
+  },
+  {
+    "type": "{",
     "named": false
   },
   {
-    "type": "update",
+    "type": "||",
     "named": false
   },
   {
-    "type": "when",
-    "named": false
-  },
-  {
-    "type": "where",
+    "type": "}",
     "named": false
   }
 ]

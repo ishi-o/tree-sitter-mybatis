@@ -29,121 +29,115 @@ MyBatis mapper
   (Mapper
     (MapperSTag
       (Attribute
-        (Name
-          (identifier))
-        (AttValue
-          (string))))
-    (mapper_item)
-    (mapper_item
-      (sql_fragment
-        (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
-        (element_content
-          (text))))
-    (mapper_item)
-    (mapper_item
-      (select_statement
-        (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
-        (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
-        (statement_content
-          (text))
-        (statement_content
-          (include_element
+        (Name)
+        (AttValue)))
+    (SqlElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (select_expression
+        (term
+          (field
+            (identifier)))
+        (term
+          (field
+            (identifier)))
+        (term
+          (field
+            (identifier)))))
+    (SelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (IncludeElem
             (Attribute
-              (Name
-                (identifier))
-              (AttValue
-                (string)))))
-        (statement_content
-          (text))
-        (statement_content
-          (dynamic_element
-            (where_element
-              (element_content
-                (text))
-              (element_content
-                (dynamic_element
-                  (if_element
-                    (Attribute
-                      (Name
-                        (identifier))
-                      (AttValue
-                        (string)))
-                    (element_content
-                      (text
-                        (sql_parameter))))))
-              (element_content
-                (text)))))
-        (statement_content
-          (text))))
-    (mapper_item)
-    (mapper_item
-      (select_statement
+              (Name)
+              (AttValue))))
+        (from
+          (keyword_from)
+          (relation
+            (object_reference
+              (identifier)))))
+      (WhereElem
+        (IfElem
+          (Attribute
+            (Name)
+            (AttValue))
+          (keyword_and)
+          (select_expression
+            (term
+              (binary_expression
+                (field
+                  (identifier))
+                (literal)))))))
+    (SelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (select_expression
+            (term
+              (all_fields))))
+        (from
+          (keyword_from)
+          (relation
+            (object_reference
+              (identifier))))
+        (where
+          (keyword_where)
+          (binary_expression
+            (field
+              (identifier))
+            (literal)))))
+    (Comment)
+    (InsElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (SelKeyElem
         (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
+          (Name)
+          (AttValue))
         (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
-        (statement_content
-          (text
-            (sql_parameter)
-            (entity_reference)
-            (entity_reference)))))
-    (mapper_item)
-    (mapper_item
-      (Comment))
-    (mapper_item)
-    (mapper_item
-      (insert_statement
+          (Name)
+          (AttValue))
         (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
-        (statement_content
-          (text))
-        (statement_content
-          (select_key
-            (Attribute
-              (Name
+          (Name)
+          (AttValue))
+        (statement
+          (select
+            (keyword_select)
+            (select_expression
+              (term
+                (invocation
+                  (object_reference
+                    (identifier))))))))
+      (CDSect
+        (CDStart)
+        (CData
+          (statement
+            (insert
+              (keyword_insert)
+              (keyword_into)
+              (object_reference
                 (identifier))
-              (AttValue
-                (string)))
-            (Attribute
-              (Name
-                (identifier))
-              (AttValue
-                (string)))
-            (Attribute
-              (Name
-                (identifier))
-              (AttValue
-                (string)))
-            (statement_content
-              (text))))
-        (statement_content
-          (text))
-        (statement_content
-          (cdata))
-        (statement_content
-          (text))))
-    (mapper_item)
+              (list
+                (column
+                  (identifier)))
+              (keyword_values)
+              (list
+                (literal)))))))
     (MapperETag)))
 
 ==================
@@ -164,69 +158,512 @@ iBATIS sqlMap
 
 (document
   (XMLDecl)
-  (sql_map
+  (SqlMap
     (SqlMapSTag
       (Attribute
-        (Name
-          (identifier))
-        (AttValue
-          (string))))
-    (mapper_item)
-    (mapper_item
-      (select_statement
+        (Name)
+        (AttValue)))
+    (SelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (select_expression
+            (term
+              (all_fields))))
+        (from
+          (keyword_from)
+          (relation
+            (object_reference
+              (identifier))))
+        (where
+          (keyword_where)
+          (binary_expression
+            (field
+              (identifier))
+            (literal))))
+      (IsNotEmptyElem
         (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
+          (Name)
+          (AttValue))
         (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
-        (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
-        (statement_content
-          (text
-            (ibatis_parameter)))
-        (statement_content
-          (dynamic_element
-            (is_not_empty_element
-              (Attribute
-                (Name
-                  (identifier))
-                (AttValue
-                  (string)))
-              (Attribute
-                (Name
-                  (identifier))
-                (AttValue
-                  (string)))
-              (element_content
-                (text
-                  (ibatis_parameter))))))
-        (statement_content
-          (text))))
-    (mapper_item)
-    (mapper_item
-      (sql_fragment
-        (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))
-        (element_content
-          (text))))
-    (mapper_item)
-    (mapper_item
-      (include_element
-        (Attribute
-          (Name
-            (identifier))
-          (AttValue
-            (string)))))
-    (mapper_item)
+          (Name)
+          (AttValue))
+        (select_expression
+          (term
+            (binary_expression
+              (field
+                (identifier))
+              (literal))))))
+    (SqlElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (select_expression
+        (term
+          (field
+            (identifier)))
+        (term
+          (field
+            (identifier)))))
+    (IncludeElem
+      (Attribute
+        (Name)
+        (AttValue)))
     (SqlMapETag)))
+
+==================
+MyBatis statement element names
+==================
+<mapper namespace="StatementMapper">
+  <update id="updateUser">UPDATE users SET name = 'updated' WHERE id = #{id}</update>
+  <delete id="deleteUser">DELETE FROM users WHERE id = #{id}</delete>
+  <procedure id="callCountUsers">{call count_users()}</procedure>
+  <statement id="rawStatement">TRUNCATE TABLE users</statement>
+  <extension name="custom">SELECT 1</extension>
+</mapper>
+---
+
+(document
+  (Mapper
+    (MapperSTag
+      (Attribute
+        (Name)
+        (AttValue)))
+    (UpdElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (update
+          (keyword_update)
+          (relation
+            (object_reference
+              (identifier)))
+          (keyword_set)
+          (assignment
+            (field
+              (identifier))
+            (literal)))
+        (where
+          (keyword_where)
+          (binary_expression
+            (field
+              (identifier))
+            (literal)))))
+    (DelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (delete
+          (keyword_delete))
+        (from
+          (keyword_from)
+          (object_reference
+            (identifier)))
+        (from
+          (keyword_where)
+          (binary_expression
+            (field
+              (identifier))
+            (literal)))))
+    (ProcElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (keyword_call)
+      (invocation
+        (object_reference
+          (identifier))))
+    (StmtElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (keyword_truncate)
+        (keyword_table)
+        (object_reference
+          (identifier))))
+    (element
+      (STag
+        (Name)
+        (Attribute
+          (Name)
+          (AttValue)))
+      (content
+        (CharData))
+      (ETag
+        (Name)))
+    (MapperETag)))
+
+==================
+SQL columns and values
+==================
+<mapper namespace="ColumnValueMapper">
+  <insert id="insertUser">
+    INSERT INTO users (id, name, status) VALUES (#{id}, #{name}, 'active')
+  </insert>
+  <select id="findByStatus">SELECT id, name FROM users WHERE status = 'active'</select>
+  <update id="markInactive">
+    <![CDATA[ UPDATE users SET status = 'inactive', updated_at = CURRENT_TIMESTAMP ]]>
+  </update>
+</mapper>
+---
+
+(document
+  (Mapper
+    (MapperSTag
+      (Attribute
+        (Name)
+        (AttValue)))
+    (InsElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (insert
+          (keyword_insert)
+          (keyword_into)
+          (object_reference
+            (identifier))
+          (list
+            (column
+              (identifier))
+            (column
+              (identifier))
+            (column
+              (identifier)))
+          (keyword_values)
+          (list
+            (literal)
+            (literal)
+            (literal)))))
+    (SelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (select_expression
+            (term
+              (field
+                (identifier)))
+            (term
+              (field
+                (identifier)))))
+        (from
+          (keyword_from)
+          (relation
+            (object_reference
+              (identifier))))
+        (where
+          (keyword_where)
+          (binary_expression
+            (field
+              (identifier))
+            (literal)))))
+    (UpdElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (CDSect
+        (CDStart)
+        (CData
+          (statement
+            (update
+              (keyword_update)
+              (relation
+                (object_reference
+                  (identifier)))
+              (keyword_set)
+              (assignment
+                (field
+                  (identifier))
+                (literal))
+              (assignment
+                (field
+                  (identifier))
+                (literal
+                  (keyword_current_timestamp))))))))
+    (MapperETag)))
+
+==================
+CDATA SQL wrapper
+==================
+<mapper namespace="CdataMapper">
+  <select id="findAdults"> <![CDATA[ SELECT id, name FROM users WHERE age < #{age} AND note = 'active' /* filtered */ ]]> </select>
+  <update id="touch"> <![CDATA[ UPDATE users SET version = version + 1 WHERE id = #{id} ]]> </update>
+  <delete id="emptyCdata"> <![CDATA[ ]]> </delete>
+</mapper>
+---
+
+(document
+  (Mapper
+    (MapperSTag
+      (Attribute
+        (Name)
+        (AttValue)))
+    (SelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (CDSect
+        (CDStart)
+        (CData
+          (statement
+            (select
+              (keyword_select)
+              (select_expression
+                (term
+                  (field
+                    (identifier)))
+                (term
+                  (field
+                    (identifier)))))
+            (from
+              (keyword_from)
+              (relation
+                (object_reference
+                  (identifier))))
+            (where
+              (keyword_where)
+              (binary_expression
+                (binary_expression
+                  (binary_expression
+                    (field
+                      (identifier))
+                    (literal))
+                  (keyword_and)
+                  (field
+                    (identifier)))
+                (literal)))))
+        (comment)))
+    (UpdElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (CDSect
+        (CDStart)
+        (CData
+          (statement
+            (update
+              (keyword_update)
+              (relation
+                (object_reference
+                  (identifier)))
+              (keyword_set)
+              (assignment
+                (field
+                  (identifier))
+                (binary_expression
+                  (field
+                    (identifier))
+                  (literal))))
+            (where
+              (keyword_where)
+              (binary_expression
+                (field
+                  (identifier))
+                (literal)))))))
+    (DelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (CDSect
+        (CDStart)))
+    (MapperETag)))
+
+==================
+SQL lexical content
+==================
+<mapper namespace="SqlLexicalMapper">
+  <select id="lexical">
+    SELECT 0x1F, 1.25e3, .5, 'single', "double" FROM users /* blocked */
+    WHERE id = #{id} AND name IS NOT NULL -- filtered
+  </select>
+</mapper>
+---
+
+(document
+  (Mapper
+    (MapperSTag
+      (Attribute
+        (Name)
+        (AttValue)))
+    (SelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (select_expression
+            (term
+              (literal))
+            (term
+              (literal))
+            (term
+              (literal))
+            (term
+              (literal))
+            (term
+              (literal))))
+        (from
+          (keyword_from)
+          (relation
+            (object_reference
+              (identifier))))
+        (comment)
+        (where
+          (keyword_where)
+          (binary_expression
+            (binary_expression
+              (binary_expression
+                (field
+                  (identifier))
+                (literal))
+              (keyword_and)
+              (field
+                (identifier)))
+            (keyword_is)
+            (keyword_not)
+            (literal
+              (keyword_null)))))
+      (comment))
+    (MapperETag)))
+
+==================
+Dynamic and generic elements
+==================
+<mapper namespace="DynamicMapper">
+  <sql id="columns">id, name</sql>
+  <select id="findByCondition">
+    SELECT <include refid="columns"/>
+    <trim prefix="WHERE" prefixOverrides="AND |OR ">
+      <bind name="pattern" value="'%' + name + '%'"/>
+      <foreach collection="ids" item="id" open="(" separator="," close=")">#{id}</foreach>
+    </trim>
+    <choose>
+      <when test="email != null">AND email = #{email}</when>
+      <otherwise>AND email IS NULL</otherwise>
+    </choose>
+  </select>
+  <extension source="custom">
+    <nested enabled="true">SELECT 1</nested>
+  </extension>
+</mapper>
+---
+
+(document
+  (Mapper
+    (MapperSTag
+      (Attribute
+        (Name)
+        (AttValue)))
+    (SqlElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (select_expression
+        (term
+          (field
+            (identifier)))
+        (term
+          (field
+            (identifier)))))
+    (SelElem
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (IncludeElem
+            (Attribute
+              (Name)
+              (AttValue)))))
+      (TrimElem
+        (Attribute
+          (Name)
+          (AttValue))
+        (Attribute
+          (Name)
+          (AttValue))
+        (BindElem
+          (Attribute
+            (Name)
+            (AttValue))
+          (Attribute
+            (Name)
+            (AttValue)))
+        (ForeachElem
+          (Attribute
+            (Name)
+            (AttValue))
+          (Attribute
+            (Name)
+            (AttValue))
+          (Attribute
+            (Name)
+            (AttValue))
+          (Attribute
+            (Name)
+            (AttValue))
+          (Attribute
+            (Name)
+            (AttValue))
+          (select_expression
+            (term
+              (literal)))))
+      (ChooseElem
+        (WhenElem
+          (Attribute
+            (Name)
+            (AttValue))
+          (keyword_and)
+          (select_expression
+            (term
+              (binary_expression
+                (field
+                  (identifier))
+                (literal)))))
+        (OtherwiseElem
+          (keyword_and)
+          (select_expression
+            (term
+              (binary_expression
+                (field
+                  (identifier))
+                (keyword_is)
+                (literal
+                  (keyword_null))))))))
+    (element
+      (STag
+        (Name)
+        (Attribute
+          (Name)
+          (AttValue)))
+      (content
+        (element
+          (STag
+            (Name)
+            (Attribute
+              (Name)
+              (AttValue)))
+          (content
+            (CharData))
+          (ETag
+            (Name))))
+      (ETag
+        (Name)))
+    (MapperETag)))

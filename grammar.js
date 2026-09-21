@@ -1,278 +1,543 @@
 /**
  * @file Tree-sitter grammar for MyBatis and iBATIS mapper files.
- * @author ishi-o <458457289@qq.com>
+ * @author ishi-o <ishio.liu@outlook.com>
  * @license MIT
  */
 
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-const XML_NAME = /[A-Za-z_][A-Za-z0-9_.:-]*/;
-const WS = /[ \t\r\n]+/;
+/** @type {RegExp} */
+const XML_NAME = /[A-Za-z_:][A-Za-z0-9_.:-]*/;
 
-/** @param {any} $ @param {string} name */
+/** @type {readonly string[]} */
+const SQL_KEYWORDS = [
+  "add",
+  "all",
+  "alter",
+  "and",
+  "as",
+  "asc",
+  "between",
+  "by",
+  "call",
+  "case",
+  "column",
+  "create",
+  "cross",
+  "current_timestamp",
+  "default",
+  "delete",
+  "desc",
+  "distinct",
+  "drop",
+  "else",
+  "end",
+  "exists",
+  "foreign",
+  "from",
+  "full",
+  "group",
+  "having",
+  "in",
+  "inner",
+  "insert",
+  "into",
+  "is",
+  "join",
+  "key",
+  "left",
+  "like",
+  "limit",
+  "not",
+  "null",
+  "offset",
+  "on",
+  "or",
+  "order",
+  "outer",
+  "primary",
+  "references",
+  "returning",
+  "right",
+  "select",
+  "set",
+  "table",
+  "then",
+  "truncate",
+  "union",
+  "unique",
+  "update",
+  "values",
+  "when",
+  "where",
+  "with",
+];
+
+/**
+ * @param {string} keyword
+ * @returns {RegExp}
+ */
+function makeKeyword(keyword) {
+  return new RegExp(
+    keyword
+      .split("")
+      .map((char) => `[${char.toLowerCase()}${char.toUpperCase()}]`)
+      .join(""),
+  );
+}
+
+/**
+ * @param {RuleOrLiteral} rule
+ * @param {boolean} requireFirst
+ * @returns {RuleOrLiteral}
+ */
+function commaList(rule, requireFirst = true) {
+  const sequence = seq(rule, repeat(seq(",", rule)));
+  return requireFirst ? sequence : optional(sequence);
+}
+
+/**
+ * @param {RuleOrLiteral} rule
+ * @returns {SeqRule}
+ */
+function parenList(rule) {
+  return seq("(", commaList(rule), ")");
+}
+
+/**
+ * @param {GrammarSymbols<string>} $
+ * @param {string} name
+ * @returns {SeqRule}
+ */
 function openTag($, name) {
-  return seq("<", name, repeat(seq(WS, $.Attribute)), optional(WS), ">");
+  return seq(token(prec(3, seq("<", name))), repeat($.Attribute), ">");
 }
 
-/** @param {any} $ @param {string} name */
-function selfClosingTag($, name) {
-  return seq("<", name, repeat(seq(WS, $.Attribute)), optional(WS), "/>");
-}
-
-/** @param {any} $ @param {string} name */
+/**
+ * @param {GrammarSymbols<string>} $
+ * @param {string} name
+ * @returns {SeqRule}
+ */
 function closeTag($, name) {
-  return seq("</", name, optional(WS), ">");
+  return seq(token(prec(3, seq("</", name))), ">");
 }
 
-/** @param {any} $ @param {string} name @param {any} body */
+/**
+ * @param {GrammarSymbols<string>} $
+ * @param {string} name
+ * @returns {SeqRule}
+ */
+function selfClosingTag($, name) {
+  return seq(token(prec(3, seq("<", name))), repeat($.Attribute), "/>");
+}
+
+/**
+ * @param {GrammarSymbols<string>} $
+ * @param {string} name
+ * @param {RuleOrLiteral} body
+ * @returns {ChoiceRule}
+ */
 function taggedElement($, name, body) {
   return choice(
-    seq(openTag($, name), repeat(body), closeTag($, name)),
+    seq(openTag($, name), body, closeTag($, name)),
     selfClosingTag($, name),
+  );
+}
+
+/**
+ * @param {GrammarSymbols<string>} $
+ * @returns {ChoiceRule}
+ */
+function dynamicContent($) {
+  return choice(
+    $.IfElem,
+    $.ChooseElem,
+    $.WhenElem,
+    $.OtherwiseElem,
+    $.TrimElem,
+    $.WhereElem,
+    $.SetElem,
+    $.ForeachElem,
+    $.BindElem,
+    $.DynamicSqlElem,
+    $.IterateElem,
+    $.IsNotEmptyElem,
+    $.IsEmptyElem,
+    $.IsEqualElem,
+    $.IsNotEqualElem,
+    $.IsGreaterThanElem,
+    $.IsGreaterEqualElem,
+    $.IsLessThanElem,
+    $.IsLessEqualElem,
+    $.IsNotNullElem,
+    $.IsNullElem,
+    $.IsPropertyAvailableElem,
+    $.IsNotPropertyAvailableElem,
+    $.IsParameterPresentElem,
+    $.IsNotParameterPresentElem,
+  );
+}
+
+/**
+ * @param {GrammarSymbols<string>} $
+ * @returns {ChoiceRule}
+ */
+function mapperContent($) {
+  return choice(
+    $.statement,
+    $.from,
+    $.where,
+    $.select_expression,
+    $.SelElem,
+    $.InsElem,
+    $.UpdElem,
+    $.DelElem,
+    $.ProcElem,
+    $.StmtElem,
+    $.SelKeyElem,
+    $.SqlElem,
+    $.IncludeElem,
+    dynamicContent($),
+    $.CDSect,
+    $.Comment,
+    $.PI,
+    $.element,
+  );
+}
+
+/**
+ * @param {GrammarSymbols<string>} $
+ * @returns {ChoiceRule}
+ */
+function sqlFragmentContent($) {
+  return choice(
+    $.select_expression,
+    $.invocation,
+    $.list,
+    $.keyword_and,
+    $.keyword_or,
+    $.IncludeElem,
+    dynamicContent($),
+    $.CDSect,
+    $.Comment,
+    $.element,
   );
 }
 
 module.exports = grammar({
   name: "mybatis",
-
-  // Whitespace is part of SQL text, so it must not be globally skipped.
-  extras: ($) => [],
-  word: ($) => $.identifier,
+  extras: ($) => [/[ \t\r\n]+/, $.comment],
+  word: ($) => $._identifier,
+  conflicts: ($) => [
+    [$.field, $._qualified_field],
+    [$.object_reference, $._qualified_field],
+    [$.term],
+    [$.join],
+    [$._select_statement],
+    [$._update_statement],
+    [$.relation],
+    [$._delete_statement],
+  ],
 
   rules: {
     document: ($) =>
       repeat(
         choice(
           $.XMLDecl,
-          $.doctype,
+          $.doctypedecl,
+          $.PI,
           $.Comment,
           $.Mapper,
-          $.sql_map,
-          $.processing_instruction,
-          $.generic_element,
-          $.text,
-          WS,
+          $.SqlMap,
+          $.element,
         ),
       ),
 
-    Mapper: ($) =>
-      prec(12, seq($.MapperSTag, repeat($.mapper_item), $.MapperETag)),
+    XMLDecl: (_) =>
+      token(seq("<?xml", repeat(choice(/[^?]/, seq("?", /[^?]/))), "?>")),
+    PI: (_) => token(seq("<?", repeat(choice(/[^?]/, seq("?", /[^?]/))), "?>")),
+    doctypedecl: ($) => seq("<!DOCTYPE", $.Name, optional($.ExternalID), ">"),
+    ExternalID: ($) =>
+      choice(
+        seq("SYSTEM", $.SystemLiteral),
+        seq("PUBLIC", $.PubidLiteral, $.SystemLiteral),
+      ),
+    PubidLiteral: (_) => token(/"-[^"]*"|'-[^']*'/),
+    SystemLiteral: ($) => seq('"', $.URI, '"'),
+    URI: (_) => token(/[^"]*/),
 
+    Mapper: ($) => seq($.MapperSTag, repeat(mapperContent($)), $.MapperETag),
     MapperSTag: ($) => openTag($, "mapper"),
     MapperETag: ($) => closeTag($, "mapper"),
-
-    sql_map: ($) =>
-      prec(12, seq($.SqlMapSTag, repeat($.mapper_item), $.SqlMapETag)),
-
+    SqlMap: ($) => seq($.SqlMapSTag, repeat(mapperContent($)), $.SqlMapETag),
     SqlMapSTag: ($) => openTag($, "sqlMap"),
     SqlMapETag: ($) => closeTag($, "sqlMap"),
 
-    mapper_item: ($) =>
+    SelElem: ($) => taggedElement($, "select", repeat(mapperContent($))),
+    InsElem: ($) => taggedElement($, "insert", repeat(mapperContent($))),
+    UpdElem: ($) => taggedElement($, "update", repeat(mapperContent($))),
+    DelElem: ($) => taggedElement($, "delete", repeat(mapperContent($))),
+    ProcElem: ($) =>
+      taggedElement(
+        $,
+        "procedure",
+        choice($._procedure_call, repeat(sqlFragmentContent($))),
+      ),
+    StmtElem: ($) => taggedElement($, "statement", repeat(mapperContent($))),
+    SelKeyElem: ($) => taggedElement($, "selectKey", repeat(mapperContent($))),
+    SqlElem: ($) => taggedElement($, "sql", repeat(sqlFragmentContent($))),
+    IncludeElem: ($) => taggedElement($, "include", optional($.element)),
+
+    IfElem: ($) => taggedElement($, "if", repeat(sqlFragmentContent($))),
+    ChooseElem: ($) =>
+      taggedElement($, "choose", repeat(choice($.WhenElem, $.OtherwiseElem))),
+    WhenElem: ($) => taggedElement($, "when", repeat(sqlFragmentContent($))),
+    OtherwiseElem: ($) =>
+      taggedElement($, "otherwise", repeat(sqlFragmentContent($))),
+    TrimElem: ($) => taggedElement($, "trim", repeat(sqlFragmentContent($))),
+    WhereElem: ($) => taggedElement($, "where", repeat(sqlFragmentContent($))),
+    SetElem: ($) => taggedElement($, "set", repeat(sqlFragmentContent($))),
+    ForeachElem: ($) =>
+      taggedElement($, "foreach", repeat(sqlFragmentContent($))),
+    BindElem: ($) => taggedElement($, "bind", repeat(sqlFragmentContent($))),
+    DynamicSqlElem: ($) =>
+      taggedElement($, "dynamic", repeat(sqlFragmentContent($))),
+    IterateElem: ($) =>
+      taggedElement($, "iterate", repeat(sqlFragmentContent($))),
+    IsNotEmptyElem: ($) =>
+      taggedElement($, "isNotEmpty", repeat(sqlFragmentContent($))),
+    IsEmptyElem: ($) =>
+      taggedElement($, "isEmpty", repeat(sqlFragmentContent($))),
+    IsEqualElem: ($) =>
+      taggedElement($, "isEqual", repeat(sqlFragmentContent($))),
+    IsNotEqualElem: ($) =>
+      taggedElement($, "isNotEqual", repeat(sqlFragmentContent($))),
+    IsGreaterThanElem: ($) =>
+      taggedElement($, "isGreaterThan", repeat(sqlFragmentContent($))),
+    IsGreaterEqualElem: ($) =>
+      taggedElement($, "isGreaterEqual", repeat(sqlFragmentContent($))),
+    IsLessThanElem: ($) =>
+      taggedElement($, "isLessThan", repeat(sqlFragmentContent($))),
+    IsLessEqualElem: ($) =>
+      taggedElement($, "isLessEqual", repeat(sqlFragmentContent($))),
+    IsNotNullElem: ($) =>
+      taggedElement($, "isNotNull", repeat(sqlFragmentContent($))),
+    IsNullElem: ($) =>
+      taggedElement($, "isNull", repeat(sqlFragmentContent($))),
+    IsPropertyAvailableElem: ($) =>
+      taggedElement($, "isPropertyAvailable", repeat(sqlFragmentContent($))),
+    IsNotPropertyAvailableElem: ($) =>
+      taggedElement($, "isNotPropertyAvailable", repeat(sqlFragmentContent($))),
+    IsParameterPresentElem: ($) =>
+      taggedElement($, "isParameterPresent", repeat(sqlFragmentContent($))),
+    IsNotParameterPresentElem: ($) =>
+      taggedElement($, "isNotParameterPresent", repeat(sqlFragmentContent($))),
+
+    statement: ($) =>
       choice(
-        $.select_statement,
-        $.insert_statement,
-        $.update_statement,
-        $.delete_statement,
-        $.procedure_statement,
-        $.statement_statement,
-        $.select_key,
-        $.sql_fragment,
-        $.include_element,
-        $.dynamic_element,
-        $.Comment,
-        $.cdata,
-        $.generic_element,
-        WS,
+        $._select_statement,
+        $._insert_statement,
+        $._update_statement,
+        $._delete_statement,
+        $._truncate_statement,
+      ),
+    _procedure_call: ($) => seq("{", $.keyword_call, $.invocation, "}"),
+    _select_statement: ($) =>
+      prec(
+        2,
+        seq($.select, optional($.from), optional($.where), optional(";")),
+      ),
+    select: ($) =>
+      seq(
+        $.keyword_select,
+        optional($.keyword_distinct),
+        choice($.select_expression, $.IncludeElem),
+      ),
+    select_expression: ($) => commaList($.term),
+    term: ($) =>
+      seq(
+        field("value", choice($.all_fields, $._expression)),
+        optional($._alias),
+      ),
+    all_fields: ($) => seq(optional(seq($.object_reference, ".")), "*"),
+    _alias: ($) => seq(optional($.keyword_as), field("alias", $.identifier)),
+    from: ($) => seq($.keyword_from, commaList($.relation), repeat($.join)),
+    relation: ($) => seq($.object_reference, optional($._alias)),
+    join: ($) =>
+      seq(
+        optional(
+          choice(
+            $.keyword_left,
+            $.keyword_right,
+            $.keyword_inner,
+            $.keyword_full,
+          ),
+        ),
+        $.keyword_join,
+        $.relation,
+        optional($.join),
+        optional(seq($.keyword_on, $._expression)),
+      ),
+    where: ($) => seq($.keyword_where, $._expression),
+
+    _insert_statement: ($) => seq($.insert, optional(";")),
+    insert: ($) =>
+      seq(
+        $.keyword_insert,
+        optional($.keyword_into),
+        $.object_reference,
+        optional(alias($._column_list, $.list)),
+        $.keyword_values,
+        commaList($.list),
+      ),
+    _column_list: ($) => parenList(alias($._column, $.column)),
+    _column: ($) => choice($.identifier, alias($._literal_string, $.literal)),
+
+    _update_statement: ($) => seq($.update, optional($.where), optional(";")),
+    update: ($) =>
+      seq($.keyword_update, $.relation, $.keyword_set, commaList($.assignment)),
+    assignment: ($) =>
+      seq(
+        field("left", alias($._qualified_field, $.field)),
+        "=",
+        field("right", $._expression),
       ),
 
-    select_statement: ($) =>
-      prec(10, taggedElement($, "select", $.statement_content)),
-    insert_statement: ($) =>
-      prec(10, taggedElement($, "insert", $.statement_content)),
-    update_statement: ($) =>
-      prec(10, taggedElement($, "update", $.statement_content)),
-    delete_statement: ($) =>
-      prec(10, taggedElement($, "delete", $.statement_content)),
-    procedure_statement: ($) =>
-      prec(10, taggedElement($, "procedure", $.statement_content)),
-    statement_statement: ($) =>
-      prec(10, taggedElement($, "statement", $.statement_content)),
-    select_key: ($) =>
-      prec(10, taggedElement($, "selectKey", $.statement_content)),
-    sql_fragment: ($) => prec(10, taggedElement($, "sql", $.element_content)),
-
-    include_element: ($) =>
-      prec(10, taggedElement($, "include", $.element_content)),
-
-    statement_content: ($) =>
-      choice(
-        $.select_key,
-        $.include_element,
-        $.dynamic_element,
-        $.Comment,
-        $.cdata,
-        $.generic_element,
-        $.text,
+    _delete_statement: ($) =>
+      seq(
+        $.delete,
+        alias(seq($._delete_from, optional($.where)), $.from),
+        optional(";"),
+      ),
+    delete: ($) => $.keyword_delete,
+    _delete_from: ($) => seq($.keyword_from, $.object_reference),
+    _truncate_statement: ($) =>
+      seq(
+        $.keyword_truncate,
+        $.keyword_table,
+        $.object_reference,
+        optional(";"),
       ),
 
-    element_content: ($) =>
-      choice(
-        $.include_element,
-        $.dynamic_element,
-        $.Comment,
-        $.cdata,
-        $.generic_element,
-        $.text,
-      ),
-
-    choose_item: ($) =>
-      choice(
-        $.when_element,
-        $.otherwise_element,
-        $.include_element,
-        $.Comment,
-        $.cdata,
-        $.generic_element,
-        $.text,
-      ),
-
-    dynamic_element: ($) =>
-      choice(
-        $.if_element,
-        $.choose_element,
-        $.when_element,
-        $.otherwise_element,
-        $.trim_element,
-        $.where_element,
-        $.set_element,
-        $.foreach_element,
-        $.bind_element,
-        $.dynamic_sql_element,
-        $.iterate_element,
-        $.is_not_empty_element,
-        $.is_empty_element,
-        $.is_equal_element,
-        $.is_not_equal_element,
-        $.is_greater_than_element,
-        $.is_greater_equal_element,
-        $.is_less_than_element,
-        $.is_less_equal_element,
-        $.is_not_null_element,
-        $.is_null_element,
-        $.is_property_available_element,
-        $.is_not_property_available_element,
-        $.is_parameter_present_element,
-        $.is_not_parameter_present_element,
-      ),
-
-    if_element: ($) => prec(9, taggedElement($, "if", $.element_content)),
-    choose_element: ($) => prec(9, taggedElement($, "choose", $.choose_item)),
-    when_element: ($) => prec(9, taggedElement($, "when", $.element_content)),
-    otherwise_element: ($) =>
-      prec(9, taggedElement($, "otherwise", $.element_content)),
-    trim_element: ($) => prec(9, taggedElement($, "trim", $.element_content)),
-    where_element: ($) => prec(9, taggedElement($, "where", $.element_content)),
-    set_element: ($) => prec(9, taggedElement($, "set", $.element_content)),
-    foreach_element: ($) =>
-      prec(9, taggedElement($, "foreach", $.element_content)),
-    bind_element: ($) => prec(9, taggedElement($, "bind", $.element_content)),
-
-    // iBATIS 2 dynamic SQL tags.
-    dynamic_sql_element: ($) =>
-      prec(9, taggedElement($, "dynamic", $.element_content)),
-    iterate_element: ($) =>
-      prec(9, taggedElement($, "iterate", $.element_content)),
-    is_not_empty_element: ($) =>
-      prec(9, taggedElement($, "isNotEmpty", $.element_content)),
-    is_empty_element: ($) =>
-      prec(9, taggedElement($, "isEmpty", $.element_content)),
-    is_equal_element: ($) =>
-      prec(9, taggedElement($, "isEqual", $.element_content)),
-    is_not_equal_element: ($) =>
-      prec(9, taggedElement($, "isNotEqual", $.element_content)),
-    is_greater_than_element: ($) =>
-      prec(9, taggedElement($, "isGreaterThan", $.element_content)),
-    is_greater_equal_element: ($) =>
-      prec(9, taggedElement($, "isGreaterEqual", $.element_content)),
-    is_less_than_element: ($) =>
-      prec(9, taggedElement($, "isLessThan", $.element_content)),
-    is_less_equal_element: ($) =>
-      prec(9, taggedElement($, "isLessEqual", $.element_content)),
-    is_not_null_element: ($) =>
-      prec(9, taggedElement($, "isNotNull", $.element_content)),
-    is_null_element: ($) =>
-      prec(9, taggedElement($, "isNull", $.element_content)),
-    is_property_available_element: ($) =>
-      prec(9, taggedElement($, "isPropertyAvailable", $.element_content)),
-    is_not_property_available_element: ($) =>
-      prec(9, taggedElement($, "isNotPropertyAvailable", $.element_content)),
-    is_parameter_present_element: ($) =>
-      prec(9, taggedElement($, "isParameterPresent", $.element_content)),
-    is_not_parameter_present_element: ($) =>
-      prec(9, taggedElement($, "isNotParameterPresent", $.element_content)),
-
-    generic_element: ($) =>
+    _expression: ($) =>
       prec(
         1,
         choice(
-          seq($.STag, repeat($.element_content), $.generic_element),
-          $.EmptyElemTag,
+          $.literal,
+          alias($._qualified_field, $.field),
+          $.list,
+          $.invocation,
+          $.binary_expression,
         ),
       ),
-
-    STag: ($) =>
-      seq("<", $.tag_name, repeat(seq(WS, $.Attribute)), optional(WS), ">"),
-
-    ETag: ($) => seq("</", $.tag_name, optional(WS), ">"),
-
-    EmptyElemTag: ($) =>
-      seq("<", $.tag_name, repeat(seq(WS, $.Attribute)), optional(WS), "/>"),
-
-    Attribute: ($) => seq($.Name, optional(WS), "=", optional(WS), $.AttValue),
-
-    Name: ($) => $.identifier,
-    AttValue: ($) => choice($.string, $.string),
-
-    string: ($) =>
-      choice(
-        seq('"', repeat(choice($.entity_reference, /[^"&]/)), '"'),
-        seq("'", repeat(choice($.entity_reference, /[^'&]/)), "'"),
+    object_reference: ($) =>
+      field(
+        "name",
+        choice($.identifier, alias($._mybatis_parameter, $.identifier)),
       ),
-
-    XMLDecl: ($) =>
-      token(seq("<?xml", repeat(choice(/[^?]/, seq("?", /[^?]/))), "?>")),
-
-    processing_instruction: ($) =>
-      token(seq("<?", repeat(choice(/[^?]/, seq("?", /[^?]/))), "?>")),
-
-    doctype: ($) => token(seq("<!DOCTYPE", repeat(/[^>]/), ">")),
-
-    Comment: ($) =>
-      token(seq("<!--", repeat(choice(/[^-]/, seq("-", /[^-]/))), "-->")),
-
-    cdata: ($) =>
-      token(seq("<![CDATA[", repeat(choice(/[^]]/, seq("]", /[^]]/))), "]]>")),
-
-    text: ($) =>
-      prec.right(
-        repeat1(
+    field: ($) => field("name", $.identifier),
+    _qualified_field: ($) =>
+      seq(optional(seq($.object_reference, ".")), field("name", $.identifier)),
+    list: ($) => parenList($._expression),
+    literal: ($) =>
+      prec(
+        2,
+        choice(
+          $._integer,
+          $._decimal_number,
+          $._literal_string,
+          $._mybatis_parameter,
+          $.keyword_null,
+          $.keyword_current_timestamp,
+        ),
+      ),
+    _mybatis_parameter: (_) =>
+      token(prec(2, choice(/[$#]\{[^}]*\}/, /#[^#\r\n{}]+#/))),
+    binary_expression: ($) =>
+      prec.left(
+        2,
+        seq(
+          field("left", $._expression),
           choice(
-            $.sql_parameter,
-            $.ibatis_parameter,
-            $.entity_reference,
-            /[^<&$#]+/,
-            /[$#]/,
-            "&",
+            "=",
+            "<",
+            "<=",
+            ">",
+            ">=",
+            "!=",
+            "<>",
+            "+",
+            "-",
+            "*",
+            "/",
+            "%",
+            "||",
+            $.keyword_and,
+            $.keyword_or,
+            seq($.keyword_is, optional($.keyword_not)),
           ),
+          field("right", $._expression),
         ),
       ),
+    invocation: ($) =>
+      seq($.object_reference, seq("(", optional($._expression), ")")),
 
-    sql_parameter: ($) => token(prec(1, /[$#]\{[^}]*\}/)),
-    ibatis_parameter: ($) => token(prec(1, /#[^#\r\n]+#/)),
-    entity_reference: ($) =>
-      token(prec(1, /&(?:amp|lt|gt|quot|apos|#\d+|#x[0-9A-Fa-f]+);/)),
-    identifier: ($) => XML_NAME,
-    tag_name: ($) => token(prec(-1, XML_NAME)),
+    CDSect: ($) => seq($.CDStart, optional($.CData), "]]>"),
+    CDStart: (_) => seq("<![", "CDATA", "["),
+    CData: ($) => $.statement,
+
+    element: ($) =>
+      choice($.EmptyElemTag, seq($.STag, optional($.content), $.ETag)),
+    EmptyElemTag: ($) => seq("<", $.Name, repeat($.Attribute), "/>"),
+    STag: ($) => seq("<", $.Name, repeat($.Attribute), ">"),
+    ETag: ($) => seq("</", $.Name, ">"),
+    content: ($) =>
+      repeat1(
+        choice($.CharData, $.element, $._reference, $.CDSect, $.PI, $.Comment),
+      ),
+    CharData: (_) => token(prec(-1, repeat1(choice(/[^<&]+/, "&")))),
+    _reference: ($) => choice($.EntityRef, $.CharRef),
+    EntityRef: ($) => seq("&", $.Name, ";"),
+    CharRef: ($) =>
+      choice(seq("&#", /\d+/, ";"), seq("&#x", /[0-9A-Fa-f]+/, ";")),
+
+    Comment: (_) =>
+      token(seq("<!--", repeat(choice(/[^-]/, seq("-", /[^-]/))), "-->")),
+    comment: (_) =>
+      choice(
+        /--[^\r\n]*/,
+        token(seq("/*", repeat(choice(/[^*]/, seq("*", /[^/]/))), "*/")),
+      ),
+    Attribute: ($) => seq($.Name, "=", $.AttValue),
+    Name: (_) => token(XML_NAME),
+    AttValue: ($) =>
+      choice(
+        seq('"', repeat(choice($.EntityRef, $.CharRef, /[^"&]/)), '"'),
+        seq("'", repeat(choice($.EntityRef, $.CharRef, /[^'&]/)), "'"),
+      ),
+
+    _integer: (_) =>
+      token(/(0[xX][0-9A-Fa-f]+|0[bB][01]+|\d+(?:[eE][+-]?\d+)?)/),
+    _decimal_number: (_) => token(/(?:\d+[.]\d*|[.]\d+)(?:[eE][+-]?\d+)?/),
+    _literal_string: (_) =>
+      token(
+        choice(
+          /'(?:[^']|'')*'/,
+          /"(?:[^"]|"")*"/,
+          /&quot;[^<&]*&quot;/,
+          /&apos;[^<&]*&apos;/,
+        ),
+      ),
+    _identifier: (_) =>
+      token(/[A-Za-z_\u00C0-\u017F][0-9A-Za-z_\u00C0-\u017F]*/),
+    identifier: ($) => $._identifier,
+
+    ...Object.fromEntries(
+      SQL_KEYWORDS.map((keyword) => [
+        `keyword_${keyword}`,
+        () => token(prec(1, makeKeyword(keyword))),
+      ]),
+    ),
   },
 });

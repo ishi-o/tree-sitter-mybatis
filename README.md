@@ -15,5 +15,6 @@ npm install
 
 ```sh
 tree-sitter generate
-tree-sitter test
+tree-sitter test -u
+tree-sitter build
 ```

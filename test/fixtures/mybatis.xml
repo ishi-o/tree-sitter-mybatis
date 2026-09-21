@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- A commented-out statement must remain a comment. -->
 <mapper namespace='UserMapper'>
   <sql id="baseColumns">id, name, status</sql>
@@ -10,4 +11,7 @@
   <insert id="insertUser">
     <![CDATA[INSERT INTO users (name) VALUES (#{name})]]>
   </insert>
+  <sql id="test">
+    INSERT INTO users ( a,b,c) VALUES (1, 2)
+  </sql>
 </mapper>
