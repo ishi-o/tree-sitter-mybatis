@@ -28,10 +28,12 @@ MyBatis mapper
   (Comment)
   (Mapper
     (MapperSTag
+      (Name)
       (Attribute
         (Name)
         (AttValue)))
     (SqlElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -44,8 +46,10 @@ MyBatis mapper
             (identifier)))
         (term
           (field
-            (identifier)))))
+            (identifier))))
+      (Name))
     (SelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -56,6 +60,7 @@ MyBatis mapper
         (select
           (keyword_select)
           (IncludeElem
+            (Name)
             (Attribute
               (Name)
               (AttValue))))
@@ -65,7 +70,9 @@ MyBatis mapper
             (object_reference
               (identifier)))))
       (WhereElem
+        (Name)
         (IfElem
+          (Name)
           (Attribute
             (Name)
             (AttValue))
@@ -75,8 +82,12 @@ MyBatis mapper
               (binary_expression
                 (field
                   (identifier))
-                (literal)))))))
+                (literal))))
+          (Name))
+        (Name))
+      (Name))
     (SelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -99,13 +110,16 @@ MyBatis mapper
           (binary_expression
             (field
               (identifier))
-            (literal)))))
+            (literal))))
+      (Name))
     (Comment)
     (InsElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
       (SelKeyElem
+        (Name)
         (Attribute
           (Name)
           (AttValue))
@@ -122,7 +136,8 @@ MyBatis mapper
               (term
                 (invocation
                   (object_reference
-                    (identifier))))))))
+                    (identifier)))))))
+        (Name))
       (CDSect
         (CDStart)
         (CData
@@ -137,8 +152,252 @@ MyBatis mapper
                   (identifier)))
               (keyword_values)
               (list
-                (literal)))))))
-    (MapperETag)))
+                (literal))))))
+      (Name))
+    (MapperETag
+      (Name))))
+
+==================
+Document type, SQL fragments, and parameters
+==================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.AdditionalMapper">
+  <sql id="insertFragment">
+    INSERT INTO users (id, name) VALUES (#{id}, ${name})
+  </sql>
+  <select id="parameters" resultType="com.example.User">
+    SELECT * FROM users WHERE id = #{id} AND name = #{name}
+  </select>
+  <select id="cdata" resultType="com.example.User">
+    <![CDATA[SELECT * FROM users WHERE id = #{id}]]>
+  </select>
+</mapper>
+---
+
+(document
+  (XMLDecl)
+  (doctypedecl
+    (Name)
+    (ExternalID
+      (PubidLiteral)
+      (SystemLiteral
+        (URI))))
+  (Mapper
+    (MapperSTag
+      (Name)
+      (Attribute
+        (Name)
+        (AttValue)))
+    (SqlElem
+      (Name)
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (insert
+          (keyword_insert)
+          (keyword_into)
+          (object_reference
+            (identifier))
+          (list
+            (column
+              (identifier))
+            (column
+              (identifier)))
+          (keyword_values)
+          (list
+            (literal)
+            (literal))))
+      (Name))
+    (SelElem
+      (Name)
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (select_expression
+            (term
+              (all_fields))))
+        (from
+          (keyword_from)
+          (relation
+            (object_reference
+              (identifier))))
+        (where
+          (keyword_where)
+          (binary_expression
+            (binary_expression
+              (binary_expression
+                (field
+                  (identifier))
+                (literal))
+              (keyword_and)
+              (field
+                (identifier)))
+            (literal))))
+      (Name))
+    (SelElem
+      (Name)
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (CDSect
+        (CDStart)
+        (CData
+          (statement
+            (select
+              (keyword_select)
+              (select_expression
+                (term
+                  (all_fields))))
+            (from
+              (keyword_from)
+              (relation
+                (object_reference
+                  (identifier))))
+            (where
+              (keyword_where)
+              (binary_expression
+                (field
+                  (identifier))
+                (literal))))))
+      (Name))
+    (MapperETag
+      (Name))))
+
+==================
+PUBLIC document type
+==================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.PublicMapper">
+  <select id="findAll" resultType="com.example.User">
+    SELECT id, name FROM users
+  </select>
+</mapper>
+---
+
+(document
+  (XMLDecl)
+  (doctypedecl
+    (Name)
+    (ExternalID
+      (PubidLiteral)
+      (SystemLiteral
+        (URI))))
+  (Mapper
+    (MapperSTag
+      (Name)
+      (Attribute
+        (Name)
+        (AttValue)))
+    (SelElem
+      (Name)
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (select_expression
+            (term
+              (field
+                (identifier)))
+            (term
+              (field
+                (identifier)))))
+        (from
+          (keyword_from)
+          (relation
+            (object_reference
+              (identifier)))))
+      (Name))
+    (MapperETag
+      (Name))))
+
+==================
+Qualified parameter fields
+==================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.QualifiedParameterMapper">
+  <select id="qualified" parameterType="com.example.User" resultType="com.example.User">
+    SELECT id, name FROM users WHERE id = #{user.id} AND name = #{user.name}
+  </select>
+</mapper>
+---
+
+(document
+  (XMLDecl)
+  (doctypedecl
+    (Name)
+    (ExternalID
+      (PubidLiteral)
+      (SystemLiteral
+        (URI))))
+  (Mapper
+    (MapperSTag
+      (Name)
+      (Attribute
+        (Name)
+        (AttValue)))
+    (SelElem
+      (Name)
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (Attribute
+        (Name)
+        (AttValue))
+      (statement
+        (select
+          (keyword_select)
+          (select_expression
+            (term
+              (field
+                (identifier)))
+            (term
+              (field
+                (identifier)))))
+        (from
+          (keyword_from)
+          (relation
+            (object_reference
+              (identifier))))
+        (where
+          (keyword_where)
+          (binary_expression
+            (binary_expression
+              (binary_expression
+                (field
+                  (identifier))
+                (literal
+                  (field)
+                  (field)))
+              (keyword_and)
+              (field
+                (identifier)))
+            (literal
+              (field)
+              (field)))))
+      (Name))
+    (MapperETag
+      (Name))))
 
 ==================
 iBATIS sqlMap
@@ -160,10 +419,12 @@ iBATIS sqlMap
   (XMLDecl)
   (SqlMap
     (SqlMapSTag
+      (Name)
       (Attribute
         (Name)
         (AttValue)))
     (SelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -191,6 +452,7 @@ iBATIS sqlMap
               (identifier))
             (literal))))
       (IsNotEmptyElem
+        (Name)
         (Attribute
           (Name)
           (AttValue))
@@ -202,8 +464,11 @@ iBATIS sqlMap
             (binary_expression
               (field
                 (identifier))
-              (literal))))))
+              (literal))))
+        (Name))
+      (Name))
     (SqlElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -213,12 +478,15 @@ iBATIS sqlMap
             (identifier)))
         (term
           (field
-            (identifier)))))
+            (identifier))))
+      (Name))
     (IncludeElem
+      (Name)
       (Attribute
         (Name)
         (AttValue)))
-    (SqlMapETag)))
+    (SqlMapETag
+      (Name))))
 
 ==================
 MyBatis statement element names
@@ -235,10 +503,12 @@ MyBatis statement element names
 (document
   (Mapper
     (MapperSTag
+      (Name)
       (Attribute
         (Name)
         (AttValue)))
     (UpdElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -258,8 +528,10 @@ MyBatis statement element names
           (binary_expression
             (field
               (identifier))
-            (literal)))))
+            (literal))))
+      (Name))
     (DelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -275,16 +547,20 @@ MyBatis statement element names
           (binary_expression
             (field
               (identifier))
-            (literal)))))
+            (literal))))
+      (Name))
     (ProcElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
       (keyword_call)
       (invocation
         (object_reference
-          (identifier))))
+          (identifier)))
+      (Name))
     (StmtElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -292,7 +568,8 @@ MyBatis statement element names
         (keyword_truncate)
         (keyword_table)
         (object_reference
-          (identifier))))
+          (identifier)))
+      (Name))
     (element
       (STag
         (Name)
@@ -303,7 +580,8 @@ MyBatis statement element names
         (CharData))
       (ETag
         (Name)))
-    (MapperETag)))
+    (MapperETag
+      (Name))))
 
 ==================
 SQL columns and values
@@ -322,10 +600,12 @@ SQL columns and values
 (document
   (Mapper
     (MapperSTag
+      (Name)
       (Attribute
         (Name)
         (AttValue)))
     (InsElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -346,8 +626,10 @@ SQL columns and values
           (list
             (literal)
             (literal)
-            (literal)))))
+            (literal))))
+      (Name))
     (SelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -371,8 +653,10 @@ SQL columns and values
           (binary_expression
             (field
               (identifier))
-            (literal)))))
+            (literal))))
+      (Name))
     (UpdElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -394,8 +678,10 @@ SQL columns and values
                 (field
                   (identifier))
                 (literal
-                  (keyword_current_timestamp))))))))
-    (MapperETag)))
+                  (keyword_current_timestamp)))))))
+      (Name))
+    (MapperETag
+      (Name))))
 
 ==================
 CDATA SQL wrapper
@@ -410,10 +696,12 @@ CDATA SQL wrapper
 (document
   (Mapper
     (MapperSTag
+      (Name)
       (Attribute
         (Name)
         (AttValue)))
     (SelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -447,8 +735,10 @@ CDATA SQL wrapper
                   (field
                     (identifier)))
                 (literal)))))
-        (comment)))
+        (comment))
+      (Name))
     (UpdElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -474,14 +764,18 @@ CDATA SQL wrapper
               (binary_expression
                 (field
                   (identifier))
-                (literal)))))))
+                (literal))))))
+      (Name))
     (DelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
       (CDSect
-        (CDStart)))
-    (MapperETag)))
+        (CDStart))
+      (Name))
+    (MapperETag
+      (Name))))
 
 ==================
 SQL lexical content
@@ -497,10 +791,12 @@ SQL lexical content
 (document
   (Mapper
     (MapperSTag
+      (Name)
       (Attribute
         (Name)
         (AttValue)))
     (SelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -539,8 +835,10 @@ SQL lexical content
             (keyword_not)
             (literal
               (keyword_null)))))
-      (comment))
-    (MapperETag)))
+      (comment)
+      (Name))
+    (MapperETag
+      (Name))))
 
 ==================
 Dynamic and generic elements
@@ -567,10 +865,12 @@ Dynamic and generic elements
 (document
   (Mapper
     (MapperSTag
+      (Name)
       (Attribute
         (Name)
         (AttValue)))
     (SqlElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -580,8 +880,10 @@ Dynamic and generic elements
             (identifier)))
         (term
           (field
-            (identifier)))))
+            (identifier))))
+      (Name))
     (SelElem
+      (Name)
       (Attribute
         (Name)
         (AttValue))
@@ -589,10 +891,12 @@ Dynamic and generic elements
         (select
           (keyword_select)
           (IncludeElem
+            (Name)
             (Attribute
               (Name)
               (AttValue)))))
       (TrimElem
+        (Name)
         (Attribute
           (Name)
           (AttValue))
@@ -600,6 +904,7 @@ Dynamic and generic elements
           (Name)
           (AttValue))
         (BindElem
+          (Name)
           (Attribute
             (Name)
             (AttValue))
@@ -607,6 +912,7 @@ Dynamic and generic elements
             (Name)
             (AttValue)))
         (ForeachElem
+          (Name)
           (Attribute
             (Name)
             (AttValue))
@@ -624,9 +930,13 @@ Dynamic and generic elements
             (AttValue))
           (select_expression
             (term
-              (literal)))))
+              (literal)))
+          (Name))
+        (Name))
       (ChooseElem
+        (Name)
         (WhenElem
+          (Name)
           (Attribute
             (Name)
             (AttValue))
@@ -636,8 +946,10 @@ Dynamic and generic elements
               (binary_expression
                 (field
                   (identifier))
-                (literal)))))
+                (literal))))
+          (Name))
         (OtherwiseElem
+          (Name)
           (keyword_and)
           (select_expression
             (term
@@ -646,7 +958,10 @@ Dynamic and generic elements
                   (identifier))
                 (keyword_is)
                 (literal
-                  (keyword_null))))))))
+                  (keyword_null)))))
+          (Name))
+        (Name))
+      (Name))
     (element
       (STag
         (Name)
@@ -666,4 +981,5 @@ Dynamic and generic elements
             (Name))))
       (ETag
         (Name)))
-    (MapperETag)))
+    (MapperETag
+      (Name))))

@@ -10,6 +10,7 @@
         "mybatis"
       ],
       "injection-regex": "^mybatis$",
+      "highlights": "queries/mybatis/highlights.scm",
       "class-name": "TreeSitterMybatis"
     }
   ],

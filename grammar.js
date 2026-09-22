@@ -7,8 +7,7 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-/** @type {RegExp} */
-const XML_NAME = /[A-Za-z_:][A-Za-z0-9_.:-]*/;
+const XML_NAME = new RustRegex("[A-Za-z_:][A-Za-z0-9_.:-]*");
 
 /** @type {readonly string[]} */
 const SQL_KEYWORDS = [
@@ -75,19 +74,6 @@ const SQL_KEYWORDS = [
 ];
 
 /**
- * @param {string} keyword
- * @returns {RegExp}
- */
-function makeKeyword(keyword) {
-  return new RegExp(
-    keyword
-      .split("")
-      .map((char) => `[${char.toLowerCase()}${char.toUpperCase()}]`)
-      .join(""),
-  );
-}
-
-/**
  * @param {RuleOrLiteral} rule
  * @param {boolean} requireFirst
  * @returns {RuleOrLiteral}
@@ -111,7 +97,7 @@ function parenList(rule) {
  * @returns {SeqRule}
  */
 function openTag($, name) {
-  return seq(token(prec(3, seq("<", name))), repeat($.Attribute), ">");
+  return seq("<", alias(name, $.Name), repeat($.Attribute), ">");
 }
 
 /**
@@ -120,16 +106,7 @@ function openTag($, name) {
  * @returns {SeqRule}
  */
 function closeTag($, name) {
-  return seq(token(prec(3, seq("</", name))), ">");
-}
-
-/**
- * @param {GrammarSymbols<string>} $
- * @param {string} name
- * @returns {SeqRule}
- */
-function selfClosingTag($, name) {
-  return seq(token(prec(3, seq("<", name))), repeat($.Attribute), "/>");
+  return seq("</", alias(name, $.Name), ">");
 }
 
 /**
@@ -141,7 +118,7 @@ function selfClosingTag($, name) {
 function taggedElement($, name, body) {
   return choice(
     seq(openTag($, name), body, closeTag($, name)),
-    selfClosingTag($, name),
+    seq("<", alias(name, $.Name), repeat($.Attribute), "/>"),
   );
 }
 
@@ -227,7 +204,7 @@ function sqlFragmentContent($) {
 
 module.exports = grammar({
   name: "mybatis",
-  extras: ($) => [/[ \t\r\n]+/, $.comment],
+  extras: ($) => [new RustRegex("[ \\t\\r\\n]+"), $.comment],
   word: ($) => $._identifier,
   conflicts: ($) => [
     [$.field, $._qualified_field],
@@ -255,17 +232,35 @@ module.exports = grammar({
       ),
 
     XMLDecl: (_) =>
-      token(seq("<?xml", repeat(choice(/[^?]/, seq("?", /[^?]/))), "?>")),
-    PI: (_) => token(seq("<?", repeat(choice(/[^?]/, seq("?", /[^?]/))), "?>")),
-    doctypedecl: ($) => seq("<!DOCTYPE", $.Name, optional($.ExternalID), ">"),
+      token(
+        seq(
+          "<?xml",
+          repeat(
+            choice(new RustRegex("[^?]"), seq("?", new RustRegex("[^?]"))),
+          ),
+          "?>",
+        ),
+      ),
+    PI: (_) =>
+      token(
+        seq(
+          "<?",
+          repeat(
+            choice(new RustRegex("[^?]"), seq("?", new RustRegex("[^?]"))),
+          ),
+          "?>",
+        ),
+      ),
+    doctypedecl: ($) =>
+      seq("<", "!DOCTYPE", $.Name, optional($.ExternalID), ">"),
     ExternalID: ($) =>
       choice(
         seq("SYSTEM", $.SystemLiteral),
         seq("PUBLIC", $.PubidLiteral, $.SystemLiteral),
       ),
-    PubidLiteral: (_) => token(/"-[^"]*"|'-[^']*'/),
+    PubidLiteral: (_) => token(new RustRegex("\"-[^\"]*\"|'-[^']*'")),
     SystemLiteral: ($) => seq('"', $.URI, '"'),
-    URI: (_) => token(/[^"]*/),
+    URI: (_) => token(new RustRegex('[^"]*')),
 
     Mapper: ($) => seq($.MapperSTag, repeat(mapperContent($)), $.MapperETag),
     MapperSTag: ($) => openTag($, "mapper"),
@@ -286,7 +281,7 @@ module.exports = grammar({
       ),
     StmtElem: ($) => taggedElement($, "statement", repeat(mapperContent($))),
     SelKeyElem: ($) => taggedElement($, "selectKey", repeat(mapperContent($))),
-    SqlElem: ($) => taggedElement($, "sql", repeat(sqlFragmentContent($))),
+    SqlElem: ($) => taggedElement($, "sql", repeat(mapperContent($))),
     IncludeElem: ($) => taggedElement($, "include", optional($.element)),
 
     IfElem: ($) => taggedElement($, "if", repeat(sqlFragmentContent($))),
@@ -452,8 +447,40 @@ module.exports = grammar({
           $.keyword_current_timestamp,
         ),
       ),
-    _mybatis_parameter: (_) =>
-      token(prec(2, choice(/[$#]\{[^}]*\}/, /#[^#\r\n{}]+#/))),
+    _mybatis_parameter: ($) =>
+      prec(
+        2,
+        choice(
+          seq(
+            choice("$", "#"),
+            "{",
+            optional(
+              choice(
+                $._mybatis_qualified_parameter_name,
+                $._mybatis_parameter_name,
+              ),
+            ),
+            "}",
+          ),
+          seq(
+            "#",
+            choice(
+              $._mybatis_qualified_parameter_name,
+              $._mybatis_parameter_name,
+            ),
+            "#",
+          ),
+        ),
+      ),
+    _mybatis_qualified_parameter_name: ($) =>
+      seq(
+        alias($._mybatis_parameter_name, $.field),
+        ".",
+        alias($._mybatis_parameter_name, $.field),
+        repeat(seq(".", alias($._mybatis_parameter_name, $.field))),
+      ),
+    _mybatis_parameter_name: (_) =>
+      token(new RustRegex("[^.#{}\\r\\n]+")),
     binary_expression: ($) =>
       prec.left(
         2,
@@ -461,7 +488,7 @@ module.exports = grammar({
           field("left", $._expression),
           choice(
             "=",
-            "<",
+            token(prec(-1, "<")),
             "<=",
             ">",
             ">=",
@@ -496,47 +523,93 @@ module.exports = grammar({
       repeat1(
         choice($.CharData, $.element, $._reference, $.CDSect, $.PI, $.Comment),
       ),
-    CharData: (_) => token(prec(-1, repeat1(choice(/[^<&]+/, "&")))),
+    CharData: (_) =>
+      token(prec(-1, repeat1(choice(new RustRegex("[^<&]+"), "&")))),
     _reference: ($) => choice($.EntityRef, $.CharRef),
     EntityRef: ($) => seq("&", $.Name, ";"),
     CharRef: ($) =>
-      choice(seq("&#", /\d+/, ";"), seq("&#x", /[0-9A-Fa-f]+/, ";")),
+      choice(
+        seq("&#", new RustRegex("\\d+"), ";"),
+        seq("&#x", new RustRegex("[0-9A-Fa-f]+"), ";"),
+      ),
 
     Comment: (_) =>
-      token(seq("<!--", repeat(choice(/[^-]/, seq("-", /[^-]/))), "-->")),
+      token(
+        seq(
+          "<!--",
+          repeat(
+            choice(new RustRegex("[^-]"), seq("-", new RustRegex("[^-]"))),
+          ),
+          "-->",
+        ),
+      ),
     comment: (_) =>
       choice(
-        /--[^\r\n]*/,
-        token(seq("/*", repeat(choice(/[^*]/, seq("*", /[^/]/))), "*/")),
+        new RustRegex("--[^\\r\\n]*"),
+        token(
+          seq(
+            "/*",
+            repeat(
+              choice(new RustRegex("[^*]"), seq("*", new RustRegex("[^/]"))),
+            ),
+            "*/",
+          ),
+        ),
       ),
     Attribute: ($) => seq($.Name, "=", $.AttValue),
     Name: (_) => token(XML_NAME),
     AttValue: ($) =>
       choice(
-        seq('"', repeat(choice($.EntityRef, $.CharRef, /[^"&]/)), '"'),
-        seq("'", repeat(choice($.EntityRef, $.CharRef, /[^'&]/)), "'"),
+        seq(
+          '"',
+          repeat(choice($.EntityRef, $.CharRef, new RustRegex('[^"&]'))),
+          '"',
+        ),
+        seq(
+          "'",
+          repeat(choice($.EntityRef, $.CharRef, new RustRegex("[^'&]"))),
+          "'",
+        ),
       ),
 
     _integer: (_) =>
-      token(/(0[xX][0-9A-Fa-f]+|0[bB][01]+|\d+(?:[eE][+-]?\d+)?)/),
-    _decimal_number: (_) => token(/(?:\d+[.]\d*|[.]\d+)(?:[eE][+-]?\d+)?/),
+      token(
+        new RustRegex("(0[xX][0-9A-Fa-f]+|0[bB][01]+|\\d+([eE][+-]?\\d+)?)"),
+      ),
+    _decimal_number: (_) =>
+      token(new RustRegex("(\\d+[.]\\d*|[.]\\d+)([eE][+-]?\\d+)?")),
     _literal_string: (_) =>
       token(
         choice(
-          /'(?:[^']|'')*'/,
-          /"(?:[^"]|"")*"/,
-          /&quot;[^<&]*&quot;/,
-          /&apos;[^<&]*&apos;/,
+          new RustRegex("'([^']|'')*'"),
+          new RustRegex('"([^"]|"")*"'),
+          new RustRegex("&quot;[^<&]*&quot;"),
+          new RustRegex("&apos;[^<&]*&apos;"),
         ),
       ),
     _identifier: (_) =>
-      token(/[A-Za-z_\u00C0-\u017F][0-9A-Za-z_\u00C0-\u017F]*/),
+      token(
+        new RustRegex(
+          "[A-Za-z_\\u{00C0}-\\u{017F}][0-9A-Za-z_\\u{00C0}-\\u{017F}]*",
+        ),
+      ),
     identifier: ($) => $._identifier,
 
     ...Object.fromEntries(
       SQL_KEYWORDS.map((keyword) => [
         `keyword_${keyword}`,
-        () => token(prec(1, makeKeyword(keyword))),
+        () =>
+          token(
+            prec(
+              1,
+              new RustRegex(
+                keyword
+                  .split("")
+                  .map((char) => `[${char.toLowerCase()}${char.toUpperCase()}]`)
+                  .join(""),
+              ),
+            ),
+          ),
       ]),
     ),
   },

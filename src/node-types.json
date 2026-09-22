@@ -43,7 +43,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -139,6 +139,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -238,10 +242,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -261,7 +269,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -368,6 +376,10 @@
           "named": true
         },
         {
+          "type": "Name",
+          "named": true
+        },
+        {
           "type": "OtherwiseElem",
           "named": true
         },
@@ -444,7 +456,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -540,6 +552,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -663,7 +679,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -759,6 +775,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -814,7 +834,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -913,6 +933,10 @@
           "named": true
         },
         {
+          "type": "Name",
+          "named": true
+        },
+        {
           "type": "OtherwiseElem",
           "named": true
         },
@@ -965,10 +989,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -984,7 +1012,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -1091,6 +1119,10 @@
           "named": true
         },
         {
+          "type": "Name",
+          "named": true
+        },
+        {
           "type": "OtherwiseElem",
           "named": true
         },
@@ -1167,7 +1199,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -1263,6 +1295,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -1318,7 +1354,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -1414,6 +1450,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -1469,7 +1509,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -1565,6 +1605,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -1620,7 +1664,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -1716,6 +1760,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -1771,7 +1819,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -1867,6 +1915,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -1922,7 +1974,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -2018,6 +2070,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -2073,7 +2129,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -2169,6 +2225,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -2224,7 +2284,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -2320,6 +2380,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -2375,7 +2439,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -2471,6 +2535,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -2526,7 +2594,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -2622,6 +2690,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -2677,7 +2749,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -2773,6 +2845,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -2828,7 +2904,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -2924,6 +3000,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -2979,7 +3059,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -3075,6 +3155,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -3130,7 +3214,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -3226,6 +3310,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -3281,7 +3369,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -3377,6 +3465,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -3616,7 +3708,17 @@
   {
     "type": "MapperETag",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "Name",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "MapperSTag",
@@ -3624,10 +3726,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         }
       ]
@@ -3639,7 +3745,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -3735,6 +3841,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -3790,7 +3900,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -3886,6 +3996,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -3964,7 +4078,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -4068,6 +4182,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -4147,7 +4265,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -4254,6 +4372,10 @@
           "named": true
         },
         {
+          "type": "Name",
+          "named": true
+        },
+        {
           "type": "OtherwiseElem",
           "named": true
         },
@@ -4330,7 +4452,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -4426,6 +4548,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -4481,7 +4607,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -4504,6 +4630,10 @@
           "named": true
         },
         {
+          "type": "DelElem",
+          "named": true
+        },
+        {
           "type": "DynamicSqlElem",
           "named": true
         },
@@ -4517,6 +4647,10 @@
         },
         {
           "type": "IncludeElem",
+          "named": true
+        },
+        {
+          "type": "InsElem",
           "named": true
         },
         {
@@ -4580,7 +4714,27 @@
           "named": true
         },
         {
+          "type": "Name",
+          "named": true
+        },
+        {
           "type": "OtherwiseElem",
+          "named": true
+        },
+        {
+          "type": "PI",
+          "named": true
+        },
+        {
+          "type": "ProcElem",
+          "named": true
+        },
+        {
+          "type": "SelElem",
+          "named": true
+        },
+        {
+          "type": "SelKeyElem",
           "named": true
         },
         {
@@ -4588,7 +4742,19 @@
           "named": true
         },
         {
+          "type": "SqlElem",
+          "named": true
+        },
+        {
+          "type": "StmtElem",
+          "named": true
+        },
+        {
           "type": "TrimElem",
+          "named": true
+        },
+        {
+          "type": "UpdElem",
           "named": true
         },
         {
@@ -4604,23 +4770,19 @@
           "named": true
         },
         {
-          "type": "invocation",
-          "named": true
-        },
-        {
-          "type": "keyword_and",
-          "named": true
-        },
-        {
-          "type": "keyword_or",
-          "named": true
-        },
-        {
-          "type": "list",
+          "type": "from",
           "named": true
         },
         {
           "type": "select_expression",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "where",
           "named": true
         }
       ]
@@ -4816,7 +4978,17 @@
   {
     "type": "SqlMapETag",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "Name",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "SqlMapSTag",
@@ -4824,10 +4996,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         }
       ]
@@ -4839,7 +5015,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -4943,6 +5119,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -5037,7 +5217,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -5136,6 +5316,10 @@
           "named": true
         },
         {
+          "type": "Name",
+          "named": true
+        },
+        {
           "type": "OtherwiseElem",
           "named": true
         },
@@ -5188,7 +5372,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -5295,6 +5479,10 @@
           "named": true
         },
         {
+          "type": "Name",
+          "named": true
+        },
+        {
           "type": "OtherwiseElem",
           "named": true
         },
@@ -5371,7 +5559,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -5467,6 +5655,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -5522,7 +5714,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "Attribute",
@@ -5618,6 +5810,10 @@
         },
         {
           "type": "IterateElem",
+          "named": true
+        },
+        {
+          "type": "Name",
           "named": true
         },
         {
@@ -5975,7 +6171,7 @@
     "fields": {
       "name": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "identifier",
@@ -6049,7 +6245,17 @@
   {
     "type": "identifier",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "insert",
@@ -6220,9 +6426,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "field",
+          "named": true
+        },
         {
           "type": "keyword_current_timestamp",
           "named": true
@@ -6492,7 +6702,19 @@
     "named": false
   },
   {
+    "type": "!DOCTYPE",
+    "named": false
+  },
+  {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "$",
     "named": false
   },
   {
@@ -6557,10 +6779,6 @@
   },
   {
     "type": "<",
-    "named": false
-  },
-  {
-    "type": "<!DOCTYPE",
     "named": false
   },
   {
